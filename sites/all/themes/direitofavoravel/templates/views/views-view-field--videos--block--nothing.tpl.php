@@ -1,4 +1,3 @@
-<?php //print '<pre>';print_r($row);print '</pre>';die; ?>
 <?php $image = (isset($row->field_field_image[0])) ? $row->field_field_image[0]['rendered'] : $row->field_field_youtube[0]['rendered'] ?>
 
 <div class="youtube-image-thumbnail">
