@@ -3,7 +3,7 @@
 <div class="youtube-image-thumbnail">
     <?php print drupal_render($image) ?>
     <div class="youtube-button-play">
-        <img src="<?php print $GLOBALS['base_path'] . variable_get('file_public_path') ?>/player-btn.png">
+        <i class="far fa-play-circle"></i>
     </div>
 </div>
 
