@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Set-2018 às 13:28
+-- Generation Time: 08-Set-2018 às 15:46
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.0.31
 
@@ -885,6 +885,24 @@ CREATE TABLE `dfav_field_data_field_text_bottom` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `dfav_field_data_field_text_headlight`
+--
+
+CREATE TABLE `dfav_field_data_field_text_headlight` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_text_headlight_value` longtext,
+  `field_text_headlight_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 25 (field_text_headlight)';
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dfav_field_data_field_text_middle`
 --
 
@@ -1299,6 +1317,24 @@ CREATE TABLE `dfav_field_revision_field_text_bottom` (
   `field_text_bottom_value` varchar(255) DEFAULT NULL,
   `field_text_bottom_format` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 15 (field_text_bottom)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_text_headlight`
+--
+
+CREATE TABLE `dfav_field_revision_field_text_headlight` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_text_headlight_value` longtext,
+  `field_text_headlight_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 25 (field_text_headlight)';
 
 -- --------------------------------------------------------
 
@@ -2773,6 +2809,19 @@ ALTER TABLE `dfav_field_data_field_text_bottom`
   ADD KEY `field_text_bottom_format` (`field_text_bottom_format`);
 
 --
+-- Indexes for table `dfav_field_data_field_text_headlight`
+--
+ALTER TABLE `dfav_field_data_field_text_headlight`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_text_headlight_format` (`field_text_headlight_format`);
+
+--
 -- Indexes for table `dfav_field_data_field_text_middle`
 --
 ALTER TABLE `dfav_field_data_field_text_middle`
@@ -3059,6 +3108,19 @@ ALTER TABLE `dfav_field_revision_field_text_bottom`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_text_bottom_format` (`field_text_bottom_format`);
+
+--
+-- Indexes for table `dfav_field_revision_field_text_headlight`
+--
+ALTER TABLE `dfav_field_revision_field_text_headlight`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_text_headlight_format` (`field_text_headlight_format`);
 
 --
 -- Indexes for table `dfav_field_revision_field_text_middle`
