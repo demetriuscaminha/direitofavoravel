@@ -4,4 +4,4 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 tmp/*
 .idea/*
-sites/default/styles/*
+sites/default/files/styles/*
