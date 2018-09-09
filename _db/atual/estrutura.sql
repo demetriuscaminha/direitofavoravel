@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Set-2018 às 01:04
+-- Generation Time: 09-Set-2018 às 13:29
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.0.31
 
@@ -591,6 +591,41 @@ CREATE TABLE `dfav_field_data_field_category` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `dfav_field_data_field_date`
+--
+
+CREATE TABLE `dfav_field_data_field_date` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_date_value` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 28 (field_date)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_data_field_days_shifts`
+--
+
+CREATE TABLE `dfav_field_data_field_days_shifts` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_days_shifts_value` varchar(255) DEFAULT NULL,
+  `field_days_shifts_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 30 (field_days_shifts)';
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dfav_field_data_field_email`
 --
 
@@ -697,6 +732,24 @@ CREATE TABLE `dfav_field_data_field_info_right_title` (
   `field_info_right_title_value` varchar(255) DEFAULT NULL,
   `field_info_right_title_format` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 9 (field_info_right_title)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_data_field_investment`
+--
+
+CREATE TABLE `dfav_field_data_field_investment` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_investment_value` longtext,
+  `field_investment_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 26 (field_investment)';
 
 -- --------------------------------------------------------
 
@@ -939,6 +992,24 @@ CREATE TABLE `dfav_field_data_field_text_top` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `dfav_field_data_field_workload`
+--
+
+CREATE TABLE `dfav_field_data_field_workload` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_workload_value` varchar(100) DEFAULT NULL,
+  `field_workload_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 29 (field_workload)';
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dfav_field_data_field_youtube`
 --
 
@@ -953,6 +1024,40 @@ CREATE TABLE `dfav_field_data_field_youtube` (
   `field_youtube_input` varchar(1024) DEFAULT NULL,
   `field_youtube_video_id` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 23 (field_youtube)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_deleted_data_27`
+--
+
+CREATE TABLE `dfav_field_deleted_data_27` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_date_value` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 27 (field_date)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_deleted_revision_27`
+--
+
+CREATE TABLE `dfav_field_deleted_revision_27` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_date_value` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 27 (field_date)';
 
 -- --------------------------------------------------------
 
@@ -1023,6 +1128,41 @@ CREATE TABLE `dfav_field_revision_field_category` (
   `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
   `field_category_value` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 7 (field_category)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_date`
+--
+
+CREATE TABLE `dfav_field_revision_field_date` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_date_value` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 28 (field_date)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_days_shifts`
+--
+
+CREATE TABLE `dfav_field_revision_field_days_shifts` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_days_shifts_value` varchar(255) DEFAULT NULL,
+  `field_days_shifts_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 30 (field_days_shifts)';
 
 -- --------------------------------------------------------
 
@@ -1133,6 +1273,24 @@ CREATE TABLE `dfav_field_revision_field_info_right_title` (
   `field_info_right_title_value` varchar(255) DEFAULT NULL,
   `field_info_right_title_format` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 9 (field_info_right...';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_investment`
+--
+
+CREATE TABLE `dfav_field_revision_field_investment` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_investment_value` longtext,
+  `field_investment_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 26 (field_investment)';
 
 -- --------------------------------------------------------
 
@@ -1371,6 +1529,24 @@ CREATE TABLE `dfav_field_revision_field_text_top` (
   `field_text_top_value` varchar(255) DEFAULT NULL,
   `field_text_top_format` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 13 (field_text_top)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_workload`
+--
+
+CREATE TABLE `dfav_field_revision_field_workload` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_workload_value` varchar(100) DEFAULT NULL,
+  `field_workload_format` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 29 (field_workload)';
 
 -- --------------------------------------------------------
 
@@ -2607,6 +2783,31 @@ ALTER TABLE `dfav_field_data_field_category`
   ADD KEY `field_category_value` (`field_category_value`);
 
 --
+-- Indexes for table `dfav_field_data_field_date`
+--
+ALTER TABLE `dfav_field_data_field_date`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_data_field_days_shifts`
+--
+ALTER TABLE `dfav_field_data_field_days_shifts`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_days_shifts_format` (`field_days_shifts_format`);
+
+--
 -- Indexes for table `dfav_field_data_field_email`
 --
 ALTER TABLE `dfav_field_data_field_email`
@@ -2682,6 +2883,19 @@ ALTER TABLE `dfav_field_data_field_info_right_title`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_info_right_title_format` (`field_info_right_title_format`);
+
+--
+-- Indexes for table `dfav_field_data_field_investment`
+--
+ALTER TABLE `dfav_field_data_field_investment`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_investment_format` (`field_investment_format`);
 
 --
 -- Indexes for table `dfav_field_data_field_link`
@@ -2848,6 +3062,19 @@ ALTER TABLE `dfav_field_data_field_text_top`
   ADD KEY `field_text_top_format` (`field_text_top_format`);
 
 --
+-- Indexes for table `dfav_field_data_field_workload`
+--
+ALTER TABLE `dfav_field_data_field_workload`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_workload_format` (`field_workload_format`);
+
+--
 -- Indexes for table `dfav_field_data_field_youtube`
 --
 ALTER TABLE `dfav_field_data_field_youtube`
@@ -2859,6 +3086,30 @@ ALTER TABLE `dfav_field_data_field_youtube`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_youtube_video_id` (`field_youtube_video_id`);
+
+--
+-- Indexes for table `dfav_field_deleted_data_27`
+--
+ALTER TABLE `dfav_field_deleted_data_27`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_deleted_revision_27`
+--
+ALTER TABLE `dfav_field_deleted_revision_27`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`);
 
 --
 -- Indexes for table `dfav_field_group`
@@ -2906,6 +3157,31 @@ ALTER TABLE `dfav_field_revision_field_category`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_category_value` (`field_category_value`);
+
+--
+-- Indexes for table `dfav_field_revision_field_date`
+--
+ALTER TABLE `dfav_field_revision_field_date`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_revision_field_days_shifts`
+--
+ALTER TABLE `dfav_field_revision_field_days_shifts`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_days_shifts_format` (`field_days_shifts_format`);
 
 --
 -- Indexes for table `dfav_field_revision_field_email`
@@ -2983,6 +3259,19 @@ ALTER TABLE `dfav_field_revision_field_info_right_title`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_info_right_title_format` (`field_info_right_title_format`);
+
+--
+-- Indexes for table `dfav_field_revision_field_investment`
+--
+ALTER TABLE `dfav_field_revision_field_investment`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_investment_format` (`field_investment_format`);
 
 --
 -- Indexes for table `dfav_field_revision_field_link`
@@ -3147,6 +3436,19 @@ ALTER TABLE `dfav_field_revision_field_text_top`
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`),
   ADD KEY `field_text_top_format` (`field_text_top_format`);
+
+--
+-- Indexes for table `dfav_field_revision_field_workload`
+--
+ALTER TABLE `dfav_field_revision_field_workload`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_workload_format` (`field_workload_format`);
 
 --
 -- Indexes for table `dfav_field_revision_field_youtube`
