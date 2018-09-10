@@ -42,11 +42,41 @@
                 <?php endif ?>
             </div>
         </div>
-        <div class="facilitators">
-            <div class="title"><h4>Facilitadores</h4></div>
-            <div class="facilitators-content"></div>
-        </div>
 
+        <?php if (isset($node->field_facilitator_nr[LANGUAGE_NONE][0])): ?>
+            <div class="facilitators">
+                <div class="title"><h4>Facilitadores</h4></div>
+
+                <?php foreach ($node->field_facilitator_nr[LANGUAGE_NONE] as $item): ?>
+                    <?php $item = $item['node']; ?>
+
+                    <div class="facilitator">        
+                        <div class="facilitator-content">
+                            <?php if (isset($item->field_image[LANGUAGE_NONE][0])): ?>
+                                <div class="photo">
+                                    <?php $imageUrl = image_style_url('thumbnail', $item->field_image[LANGUAGE_NONE][0]['uri']) ?>
+                                    <img src="<?php print $imageUrl ?>" class="img-circle">
+                                </div>
+                            <?php endif ?>
+                            <div class="info">
+                                <div class="title"><?php print $item->title ?></div>
+                                
+                                <?php if (isset($item->body[LANGUAGE_NONE][0])): ?>
+                                    <div class="body">
+                                        <?php print truncate_utf8($item->body[LANGUAGE_NONE][0]['value'], 100, TRUE, TRUE) ?>
+                                    </div>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
         <?php //kpr($node) ?>
+        <?php if (isset($node->field_certification)): ?>
+            <div class="certification">
+                
+            </div>
+        <?php endif ?>
     </div>
 </div>
