@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Set-2018 às 13:29
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.0.31
+-- Generation Time: 10-Set-2018 às 21:08
+-- Versão do servidor: 10.1.28-MariaDB
+-- PHP Version: 7.0.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -500,6 +500,30 @@ CREATE TABLE `dfav_date_format_type` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `dfav_field_collection_item`
+--
+
+CREATE TABLE `dfav_field_collection_item` (
+  `item_id` int(11) NOT NULL COMMENT 'Primary Key: Unique field collection item ID.',
+  `revision_id` int(11) NOT NULL COMMENT 'Default revision ID.',
+  `field_name` varchar(32) NOT NULL COMMENT 'The name of the field on the host entity embedding this entity.',
+  `archived` int(11) NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether the field collection item is archived.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores information about field collection items.';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_collection_item_revision`
+--
+
+CREATE TABLE `dfav_field_collection_item_revision` (
+  `revision_id` int(11) NOT NULL COMMENT 'Primary Key: Unique revision ID.',
+  `item_id` int(11) NOT NULL COMMENT 'Field collection item ID.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores revision information about field collection items.';
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dfav_field_config`
 --
 
@@ -643,6 +667,25 @@ CREATE TABLE `dfav_field_data_field_email` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `dfav_field_data_field_file`
+--
+
+CREATE TABLE `dfav_field_data_field_file` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_file_fid` int(10) UNSIGNED DEFAULT NULL COMMENT 'The dfav_file_managed.fid being referenced in this field.',
+  `field_file_display` tinyint(3) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'Flag to control whether this file should be displayed when viewing content.',
+  `field_file_description` text COMMENT 'A description of the file.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 32 (field_file)';
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `dfav_field_data_field_image`
 --
 
@@ -769,6 +812,24 @@ CREATE TABLE `dfav_field_data_field_link` (
   `field_link_title` varchar(255) DEFAULT NULL,
   `field_link_attributes` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 5 (field_link)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_data_field_links_fc`
+--
+
+CREATE TABLE `dfav_field_data_field_links_fc` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_links_fc_value` int(11) DEFAULT NULL COMMENT 'The field collection item id.',
+  `field_links_fc_revision_id` int(11) DEFAULT NULL COMMENT 'The field collection item revision id.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 31 (field_links_fc)';
 
 -- --------------------------------------------------------
 
@@ -1028,40 +1089,6 @@ CREATE TABLE `dfav_field_data_field_youtube` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `dfav_field_deleted_data_27`
---
-
-CREATE TABLE `dfav_field_deleted_data_27` (
-  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
-  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
-  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
-  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
-  `revision_id` int(10) UNSIGNED DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
-  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
-  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
-  `field_date_value` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 27 (field_date)';
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `dfav_field_deleted_revision_27`
---
-
-CREATE TABLE `dfav_field_deleted_revision_27` (
-  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
-  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
-  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
-  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
-  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
-  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
-  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
-  `field_date_value` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 27 (field_date)';
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `dfav_field_group`
 --
 
@@ -1180,6 +1207,25 @@ CREATE TABLE `dfav_field_revision_field_email` (
   `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
   `field_email_email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 19 (field_email)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_file`
+--
+
+CREATE TABLE `dfav_field_revision_field_file` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_file_fid` int(10) UNSIGNED DEFAULT NULL COMMENT 'The dfav_file_managed.fid being referenced in this field.',
+  `field_file_display` tinyint(3) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'Flag to control whether this file should be displayed when viewing content.',
+  `field_file_description` text COMMENT 'A description of the file.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 32 (field_file)';
 
 -- --------------------------------------------------------
 
@@ -1310,6 +1356,24 @@ CREATE TABLE `dfav_field_revision_field_link` (
   `field_link_title` varchar(255) DEFAULT NULL,
   `field_link_attributes` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 5 (field_link)';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_field_revision_field_links_fc`
+--
+
+CREATE TABLE `dfav_field_revision_field_links_fc` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) UNSIGNED NOT NULL COMMENT 'The entity revision id this data is attached to',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) UNSIGNED NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_links_fc_value` int(11) DEFAULT NULL COMMENT 'The field collection item id.',
+  `field_links_fc_revision_id` int(11) DEFAULT NULL COMMENT 'The field collection item revision id.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Revision archive storage for field 31 (field_links_fc)';
 
 -- --------------------------------------------------------
 
@@ -2722,6 +2786,19 @@ ALTER TABLE `dfav_date_format_type`
   ADD KEY `title` (`title`);
 
 --
+-- Indexes for table `dfav_field_collection_item`
+--
+ALTER TABLE `dfav_field_collection_item`
+  ADD PRIMARY KEY (`item_id`);
+
+--
+-- Indexes for table `dfav_field_collection_item_revision`
+--
+ALTER TABLE `dfav_field_collection_item_revision`
+  ADD PRIMARY KEY (`revision_id`),
+  ADD KEY `item_id` (`item_id`);
+
+--
 -- Indexes for table `dfav_field_config`
 --
 ALTER TABLE `dfav_field_config`
@@ -2820,6 +2897,19 @@ ALTER TABLE `dfav_field_data_field_email`
   ADD KEY `language` (`language`);
 
 --
+-- Indexes for table `dfav_field_data_field_file`
+--
+ALTER TABLE `dfav_field_data_field_file`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_file_fid` (`field_file_fid`);
+
+--
 -- Indexes for table `dfav_field_data_field_image`
 --
 ALTER TABLE `dfav_field_data_field_image`
@@ -2908,6 +2998,20 @@ ALTER TABLE `dfav_field_data_field_link`
   ADD KEY `entity_id` (`entity_id`),
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_data_field_links_fc`
+--
+ALTER TABLE `dfav_field_data_field_links_fc`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_links_fc_value` (`field_links_fc_value`),
+  ADD KEY `field_links_fc_revision_id` (`field_links_fc_revision_id`);
 
 --
 -- Indexes for table `dfav_field_data_field_link_2`
@@ -3088,30 +3192,6 @@ ALTER TABLE `dfav_field_data_field_youtube`
   ADD KEY `field_youtube_video_id` (`field_youtube_video_id`);
 
 --
--- Indexes for table `dfav_field_deleted_data_27`
---
-ALTER TABLE `dfav_field_deleted_data_27`
-  ADD PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
-  ADD KEY `entity_type` (`entity_type`),
-  ADD KEY `bundle` (`bundle`),
-  ADD KEY `deleted` (`deleted`),
-  ADD KEY `entity_id` (`entity_id`),
-  ADD KEY `revision_id` (`revision_id`),
-  ADD KEY `language` (`language`);
-
---
--- Indexes for table `dfav_field_deleted_revision_27`
---
-ALTER TABLE `dfav_field_deleted_revision_27`
-  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
-  ADD KEY `entity_type` (`entity_type`),
-  ADD KEY `bundle` (`bundle`),
-  ADD KEY `deleted` (`deleted`),
-  ADD KEY `entity_id` (`entity_id`),
-  ADD KEY `revision_id` (`revision_id`),
-  ADD KEY `language` (`language`);
-
---
 -- Indexes for table `dfav_field_group`
 --
 ALTER TABLE `dfav_field_group`
@@ -3194,6 +3274,19 @@ ALTER TABLE `dfav_field_revision_field_email`
   ADD KEY `entity_id` (`entity_id`),
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_revision_field_file`
+--
+ALTER TABLE `dfav_field_revision_field_file`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_file_fid` (`field_file_fid`);
 
 --
 -- Indexes for table `dfav_field_revision_field_image`
@@ -3284,6 +3377,20 @@ ALTER TABLE `dfav_field_revision_field_link`
   ADD KEY `entity_id` (`entity_id`),
   ADD KEY `revision_id` (`revision_id`),
   ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `dfav_field_revision_field_links_fc`
+--
+ALTER TABLE `dfav_field_revision_field_links_fc`
+  ADD PRIMARY KEY (`entity_type`,`entity_id`,`revision_id`,`deleted`,`delta`,`language`),
+  ADD KEY `entity_type` (`entity_type`),
+  ADD KEY `bundle` (`bundle`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `entity_id` (`entity_id`),
+  ADD KEY `revision_id` (`revision_id`),
+  ADD KEY `language` (`language`),
+  ADD KEY `field_links_fc_value` (`field_links_fc_value`),
+  ADD KEY `field_links_fc_revision_id` (`field_links_fc_revision_id`);
 
 --
 -- Indexes for table `dfav_field_revision_field_link_2`
@@ -3904,7 +4011,7 @@ ALTER TABLE `dfav_authmap`
 -- AUTO_INCREMENT for table `dfav_block`
 --
 ALTER TABLE `dfav_block`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique block ID.';
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique block ID.', AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `dfav_blocked_ips`
@@ -3916,7 +4023,7 @@ ALTER TABLE `dfav_blocked_ips`
 -- AUTO_INCREMENT for table `dfav_block_custom`
 --
 ALTER TABLE `dfav_block_custom`
-  MODIFY `bid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The block’s dfav_block.bid.';
+  MODIFY `bid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The block’s dfav_block.bid.', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `dfav_clientside_validation_settings`
@@ -3928,37 +4035,49 @@ ALTER TABLE `dfav_clientside_validation_settings`
 -- AUTO_INCREMENT for table `dfav_conditional_fields`
 --
 ALTER TABLE `dfav_conditional_fields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a dependency.';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a dependency.', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `dfav_date_formats`
 --
 ALTER TABLE `dfav_date_formats`
-  MODIFY `dfid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The date format identifier.';
+  MODIFY `dfid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The date format identifier.', AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `dfav_field_collection_item`
+--
+ALTER TABLE `dfav_field_collection_item`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique field collection item ID.', AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `dfav_field_collection_item_revision`
+--
+ALTER TABLE `dfav_field_collection_item_revision`
+  MODIFY `revision_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique revision ID.', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `dfav_field_config`
 --
 ALTER TABLE `dfav_field_config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field', AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `dfav_field_config_instance`
 --
 ALTER TABLE `dfav_field_config_instance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field instance';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field instance', AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `dfav_field_group`
 --
 ALTER TABLE `dfav_field_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a group';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a group', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `dfav_file_managed`
 --
 ALTER TABLE `dfav_file_managed`
-  MODIFY `fid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'File ID.';
+  MODIFY `fid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'File ID.', AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `dfav_flood`
@@ -3970,61 +4089,61 @@ ALTER TABLE `dfav_flood`
 -- AUTO_INCREMENT for table `dfav_image_effects`
 --
 ALTER TABLE `dfav_image_effects`
-  MODIFY `ieid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image effect.';
+  MODIFY `ieid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image effect.', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `dfav_image_styles`
 --
 ALTER TABLE `dfav_image_styles`
-  MODIFY `isid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image style.';
+  MODIFY `isid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image style.', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `dfav_locales_source`
 --
 ALTER TABLE `dfav_locales_source`
-  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.';
+  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.', AUTO_INCREMENT=10652;
 
 --
 -- AUTO_INCREMENT for table `dfav_menu_links`
 --
 ALTER TABLE `dfav_menu_links`
-  MODIFY `mlid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The menu link ID (mlid) is the integer primary key.';
+  MODIFY `mlid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The menu link ID (mlid) is the integer primary key.', AUTO_INCREMENT=559;
 
 --
 -- AUTO_INCREMENT for table `dfav_metatag_config`
 --
 ALTER TABLE `dfav_metatag_config`
-  MODIFY `cid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a metatag configuration set.';
+  MODIFY `cid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a metatag configuration set.', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dfav_node`
 --
 ALTER TABLE `dfav_node`
-  MODIFY `nid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a node.';
+  MODIFY `nid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a node.', AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `dfav_node_revision`
 --
 ALTER TABLE `dfav_node_revision`
-  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for this version.';
+  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for this version.', AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `dfav_queue`
 --
 ALTER TABLE `dfav_queue`
-  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.';
+  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.', AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `dfav_role`
 --
 ALTER TABLE `dfav_role`
-  MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique role ID.';
+  MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique role ID.', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `dfav_sequences`
 --
 ALTER TABLE `dfav_sequences`
-  MODIFY `value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The value of the sequence.';
+  MODIFY `value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The value of the sequence.', AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `dfav_taxonomy_term_data`
@@ -4036,25 +4155,25 @@ ALTER TABLE `dfav_taxonomy_term_data`
 -- AUTO_INCREMENT for table `dfav_taxonomy_vocabulary`
 --
 ALTER TABLE `dfav_taxonomy_vocabulary`
-  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique vocabulary ID.';
+  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique vocabulary ID.', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dfav_url_alias`
 --
 ALTER TABLE `dfav_url_alias`
-  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'A unique path alias identifier.';
+  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'A unique path alias identifier.', AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `dfav_views_view`
 --
 ALTER TABLE `dfav_views_view`
-  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The view ID of the field, defined by the database.';
+  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The view ID of the field, defined by the database.', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `dfav_watchdog`
 --
 ALTER TABLE `dfav_watchdog`
-  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.';
+  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.', AUTO_INCREMENT=833;
 
 --
 -- AUTO_INCREMENT for table `dfav_webform_submissions`

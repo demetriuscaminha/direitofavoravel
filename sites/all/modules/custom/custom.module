@@ -1,0 +1,13 @@
+<?php
+
+function custom_init() {
+  /* definindo titulo para o banner */
+  if ($_GET['q'] == 'downloads') {
+    $result = views_get_view_result('downloads', 'page');
+    if (isset($result[0])) {
+      global $titleDownloads;
+      $titleDownloads = $result[0]->node_title;
+    }   
+  }
+}
+

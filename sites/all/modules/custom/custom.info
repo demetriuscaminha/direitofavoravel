@@ -1,0 +1,5 @@
+name = "Custom"
+description = "Configurações extras."
+core = "7.x"
+package = "Custom"
+version = 7.x-1.0
