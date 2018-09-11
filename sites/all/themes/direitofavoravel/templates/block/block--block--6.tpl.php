@@ -47,23 +47,23 @@
             <div class="facilitators">
                 <div class="title"><h4>Facilitadores</h4></div>
 
-                <?php foreach ($node->field_facilitator_nr[LANGUAGE_NONE] as $item): ?>
-                    <?php $item = $item['node']; ?>
+                <?php foreach ($node->field_facilitator_nr[LANGUAGE_NONE] as $itemFacilitator): ?>
+                    <?php $facilitator = node_load($itemFacilitator['nid']) ?>
 
                     <div class="facilitator">        
                         <div class="facilitator-content">
-                            <?php if (isset($item->field_image[LANGUAGE_NONE][0])): ?>
+                            <?php if (isset($facilitator->field_image[LANGUAGE_NONE][0])): ?>
                                 <div class="photo">
-                                    <?php $imageUrl = image_style_url('thumbnail', $item->field_image[LANGUAGE_NONE][0]['uri']) ?>
+                                    <?php $imageUrl = image_style_url('thumbnail', $facilitator->field_image[LANGUAGE_NONE][0]['uri']) ?>
                                     <img src="<?php print $imageUrl ?>" class="img-circle">
                                 </div>
                             <?php endif ?>
                             <div class="info">
-                                <div class="title"><?php print $item->title ?></div>
+                                <div class="title"><?php print $facilitator->title ?></div>
                                 
-                                <?php if (isset($item->body[LANGUAGE_NONE][0])): ?>
+                                <?php if (isset($facilitator->body[LANGUAGE_NONE][0])): ?>
                                     <div class="body">
-                                        <?php print truncate_utf8($item->body[LANGUAGE_NONE][0]['value'], 100, TRUE, TRUE) ?>
+                                        <?php print truncate_utf8($facilitator->body[LANGUAGE_NONE][0]['value'], 100, TRUE, TRUE) ?>
                                     </div>
                                 <?php endif ?>
                             </div>
@@ -72,11 +72,23 @@
                 <?php endforeach ?>
             </div>
         <?php endif ?>
-        <?php //kpr($node) ?>
-        <?php if (isset($node->field_certification)): ?>
-            <div class="certification">
-                
-            </div>
+
+        <?php if (isset($node->field_info_fc[LANGUAGE_NONE][0])): ?>
+            <?php foreach ($node->field_info_fc[LANGUAGE_NONE] as $item): ?>
+                <?php $field = entity_load('field_collection_item', array($item['value'])) ?>
+                <?php $field = $field[key($field)] ?>
+
+                <div class="box">
+                    <?php if (isset($field->field_title_custom[LANGUAGE_NONE][0])): ?>
+                        <div class="title"><?php print $field->field_title_custom[LANGUAGE_NONE][0]['value'] ?></div>
+                    <?php endif ?>
+                    <?php if (isset($field->field_text_headlight[LANGUAGE_NONE][0])): ?>
+                        <div class="content">
+                            <?php print $field->field_text_headlight[LANGUAGE_NONE][0]['value'] ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+            <?php endforeach ?>
         <?php endif ?>
     </div>
 </div>
