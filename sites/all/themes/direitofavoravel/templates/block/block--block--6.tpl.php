@@ -7,6 +7,8 @@
     <?php print render($title_suffix); ?>
 
     <?php $node = menu_get_object() ?>
+    <?php global $cursoPresencialNid ?>
+    <?php $node = (!empty($node)) ? $node : node_load($cursoPresencialNid) ?>
     <div class="content">
         <div class="link">
             <a href="#" class="btn btn-danger">INSCREVA-SE</a>
