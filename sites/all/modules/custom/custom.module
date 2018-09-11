@@ -2,7 +2,8 @@
 
 function custom_init() {
   /* definindo titulo para o banner */
-  if ($_GET['q'] == 'downloads') {
+  $types = array('downloads', 'presencial_courses');
+  if (in_array($_GET['q'], $types)) {
     $result = views_get_view_result('downloads', 'page');
     if (isset($result[0])) {
       global $titleDownloads;
