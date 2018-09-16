@@ -1,0 +1,29 @@
+<?php
+
+function custom_init() {
+  switch ($_GET['q']) {
+    case 'downloads':
+      $result = views_get_view_result('downloads', 'page');
+      if (isset($result[0])) {
+        global $titleDownloads;
+        $titleDownloads = $result[0]->node_title;
+      }       
+      break;
+    
+    case 'cursos-presenciais':
+      $result = views_get_view_result('cursos_presenciais', 'page');
+      $resultBanner = views_get_view_result('banner', 'block_2', 'cursos-presenciais');
+
+      if (isset($result[0])) {
+        global $cursoPresencialNid;
+        $cursoPresencialNid = $result[0]->nid;
+      }  
+
+      if (isset($resultBanner[0])) {
+        global $cursoPresencialBanner;
+        $cursoPresencialBanner = $resultBanner[0]->field_field_image[0]['raw']['uri'];
+      }       
+      break;   
+  } 
+}
+
