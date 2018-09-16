@@ -7,7 +7,7 @@
   	<?php print render($title_suffix); ?>
 
 	<div class="content"<?php print $content_attributes; ?>>
-		<div class="col-md-3 col-xs-12">
+		<div class="col-md-3 col-xs-12 left-sidebar">
 			<div class="header">
 				<div class="title">Equipe Confiável</div>
 				<div class="sub-title">Nossos Advogados</div>

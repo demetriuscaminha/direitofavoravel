@@ -1,8 +1,14 @@
 // Default variables.
 @import 'default-variables';
 
-// Bootstrap Framework.
-@import '../bootstrap/assets/stylesheets/bootstrap';
+// Fonts.
+@import 'fonts';
+
+// Ionicicons.
+@import 'variables';
 
 // Base-theme overrides.
 @import 'overrides';
+
+// Ionicicons.
+@import 'global';

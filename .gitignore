@@ -5,3 +5,6 @@ sites/*/settings*.php
 tmp/*
 .idea/*
 sites/default/files/styles/*
+
+# Ignore gulp files.
+node_modules

@@ -1,0 +1,607 @@
+body{
+	font-family: $font-robcond;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14px;
+	a{
+		color: $primary;
+		text-decoration: none;
+		&:hover{
+			color: $dark-primary;
+		}
+	}
+}
+
+h2.block-title{
+	font-size: 28px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0 0 40px;
+}
+
+.top-site{
+	background: black;
+	color: white;
+	a{
+		color: white;
+		&:hover{ color: $primary; }
+	}
+	.section-contact{
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		.phone{
+			margin: 0 20px 0 0;
+			i{
+				margin: 0 5px 0 0;
+				color: $primary;
+				-moz-transform: scaleX(-1);
+				-o-transform: scaleX(-1);
+				-webkit-transform: scaleX(-1);
+				transform: scaleX(-1);
+				filter: FlipH;
+				-ms-filter: "FlipH";
+			}
+		}
+	}
+	.mail{
+		i{
+			color: $primary;
+			margin: 0 5px 0 0;
+		}
+	}
+	.section-social{
+		.wrapper{
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			.social{
+				text-align: right;
+				margin: 0 20px 0 0;
+				div {
+					display: inline-block;
+					margin: 0 10px;
+					i{
+						font-size: 18px;
+					}
+				}
+			}
+			.contact{
+				.btn{
+					width: 145px;
+				}
+			}
+		}
+	}
+}
+.navbar{
+	background: transparent;
+	border: 0;
+	margin-bottom: 0;
+	padding: 20px 0;
+	a.logo {
+		display: none;
+	}
+	.menu{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		li{
+			a{
+				background: transparent;
+				color: black;
+				text-transform: uppercase;
+				font-weight: bold;
+				&:hover{
+					color: $primary;
+					background-color: transparent !important; 
+				}
+			}
+			&.active{
+				background: transparent;
+				a{
+					background: transparent;
+				}
+			}
+			&:nth-child(5){
+				display: inline-block;
+				text-indent: -99999px;
+				width: 100px;
+				height: 100px;
+				background: transparent url(../images/logo.png) no-repeat center center;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.css-super-banner{
+	position: relative;
+	.banner-superbaner{
+		height: 620px;
+		background-size: cover;
+		background-position: center center;
+		color: white;
+		.content-info{
+			margin: 120px 0 0;
+			.text-top{
+				font-family: $font-lora;
+				font-style: italic;
+				font-size: 24px;
+			}
+			.text-middle,
+			.text-bottom{
+				font-size: 36px;
+				font-family: $font-robcond;
+				font-weight: bold;
+			}
+			.text-bottom{
+				font-size: 48px;
+				text-transform: uppercase;
+			}
+			.buttons{
+				.btn{
+					width: 200px;
+				}
+				.btn-outline{
+					margin: 0 20px 0 0;
+				}
+			}
+		}
+	}
+	.banner-bottom{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 40px 0;
+		@include gradient-horizontal(rgba(0,176,204,.8),rgba(0,0,0,.8));
+		.title-left{
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.sub-title-left,
+		.sub-title-right{
+			font-size: 22px;
+			text-transform: uppercase;
+		}
+		.col-1{
+			text-align: right;
+		}
+	}
+}
+
+.css-banner-internas{
+	.banner-internas{
+		height: 250px !important;
+		background-size: cover;
+		background-position: center center;
+		color: white;
+		margin: 0 0 80px;
+		padding: 90px 0;
+		line-height: 1.1;
+		.area{
+			font-size: 24px;
+			font-family: $font-lora;
+			font-style: italic;
+		}
+		.title{
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.sub-title{
+			font-size: 48px;
+			font-weight: bold;
+			text-transform: uppercase;		
+		}
+		.caption {
+			h1{
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 36px;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.region-sidebar-second{
+	.link{
+		.btn{
+			width: 100%;
+		}
+	}
+	.info{
+		margin: 30px 0;
+		font-size: 18px;
+		.title{
+			h4{
+				margin: 0 0 10px;
+				color: $dark-primary;
+				font-weight: bold;
+			}
+		}
+	}
+	.facilitators{
+		margin: 0 20px 0 0;
+		.title{
+			h4{
+				font-size: 18px;
+				margin: 0 0 10px;
+				color: $dark-primary;
+				font-weight: bold;
+			}
+		}
+		.facilitator-content{
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			.photo{
+				margin: 0;
+				img{
+					width: 68px;
+					height: 68px;
+				}
+			}
+			.info{
+				font-size: 14px;
+				margin: 0 0 0 15px;
+				.title{
+					color: $dark-primary;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.box{
+		margin: 20px 0;
+		.title{
+			font-size: 18px;
+			color: $dark-primary;
+			font-weight: bold;
+		}
+	}
+	.css-cursos-presenciais-relacionados{
+		.view-header{
+			.title{
+				font-size: 20px;
+				font-weight: bold;
+				display: flex;
+				justify-content: start;
+				text-transform: uppercase;
+				margin: 20px 0 15px;
+				.title-blue{
+					color: $dark-primary;
+					margin: 0 5px 0 0;
+				}
+			}
+		}
+	}
+}
+
+.css-cursos-presenciais-lista{
+	.field-name-body{
+		font-size: 18px;
+		margin: 60px 0;
+		line-height: 150%;
+		.field-items{
+			margin: 0;
+		}
+	}
+	.ui-accordion{
+		font-family: $font-robcond;
+		.ui-accordion-header-icon{ display: none; }
+		.ui-accordion-header{
+			background: white;
+			border-color: $border;
+			padding: 30px 30px 30px 110px;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			&-active{
+				border-bottom-color: transparent;
+			}
+			.number{
+				font-size: 62px;
+			   font-weight: bold;
+			   color: rgba(16, 176, 201, 0.3);
+			   position: absolute;
+			   left: 30px;
+			   top: 15px;
+			}
+			.col-1{
+				.title{
+					font-size: 18px;
+					font-weight: bold;
+				}
+				.facilitator{
+					font-size: 16px;
+					.name{
+						color: $dark-primary;
+					}
+				}
+			}
+			.col-2{
+				display: flex;
+				justify-content: space-between;
+				.duration, .area{
+					font-size: 12px;
+					font-weight: bold;
+					padding: 10px;
+					background: $bg-light;
+					height: 35px;
+					margin: 0 0 0 20px;
+					color: $text-high;
+				}
+			}
+		}
+		.ui-accordion-content{
+			background: white;
+			border-color: $border;
+			border-top-color: transparent;
+		}
+	}
+	.field-name-field-investment{
+		margin: 60px 0;
+		font-size: 18px;
+		.field-label{
+			margin: 0 0 15px;
+			font-size: 22px;
+		}
+	}
+}
+
+#block-block-3{
+	margin: 80px 0;
+	display: inline-block;
+	.left-sidebar{
+		.header{
+			border-left: 6px solid $primary;
+			padding: 0 0 0 15px;
+			margin: 0 0 20px 0;
+			.title{
+				font-family: $font-lora;
+				font-size: 18px;
+				font-style: italic;
+			}
+			.sub-title{
+				font-weight: bold;
+				font-size: 24px;
+				text-transform: uppercase;
+			}
+		}
+		.link{
+			margin: 20px 0 0;
+			.link-lawyer{
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+	}
+	.css-advogados-home{
+		.col-md-4 {
+			position: relative;
+			.hover{
+				color: white;
+			    position: absolute;
+			    opacity: 0;
+			    top: 50px;
+			    left: 0;
+			    margin: 0 15px;
+			    background: rgba(0,176,204,.6);
+			    padding: 20px;
+			    height: 312px;
+			    transition: 0.3s;
+			    .email{
+			    	margin: 0 0 10px;
+			    	a{
+			    		color: white;
+			    		font-weight: bold;
+			    	}
+			    }
+			    .social{
+					display: flex;
+					justify-content: space-between;
+					a{
+						color: white;
+						&:hover{
+							i{
+								background: white;
+								color: $primary;
+							}
+						}					
+			    		i{
+				    		color: white;
+				    		border: 1px solid white;
+				    		border-radius: 100%;
+				    		padding: 10px;
+				    		display: inline-block;
+				    		width: 36px;
+				    		height: 36px;
+				    		text-align: center;
+				    	}
+					}
+			    }
+			}
+			&:hover{
+				.hover{
+					opacity: 1;
+					top: 0;
+				}
+			}
+			.views-field-title{
+				padding: 20px;
+				background: $bg-light;
+				.name{
+					font-size: 18px;
+					font-weight: bold;
+				}
+				.specialty{
+					font-family: $font-lora;
+					font-size: 14px;
+					font-style: italic;
+					color: $text-medium;
+				}
+			}
+		}
+	}
+}
+
+.css-mentoria{
+	padding: 50px 0;
+	text-align: center;
+	color: white;
+	.views-field-title{
+		font-size: 28px;
+		text-transform: uppercase;
+		font-weight: bold;
+		position: relative;
+		margin: 0 0 60px;
+		&:before{
+			position: absolute;
+			content: "";
+			width: 200px;
+			height: 1px;
+			background: white;
+			left: 50%;
+			margin-left: -100px;
+			top: 68px;
+		}
+	}
+	.views-field-body{
+		font-family: $font-lora;
+		font-size: 18px;
+		font-style: italic;
+		padding: 0 180px;
+	}
+}
+
+.content-bottom{
+	background: $bg-section;
+}
+.owl-theme{
+	.owl-controls{
+		.owl-page{
+			span{
+				background: $text-medium;
+				width: 8px;
+	    		height: 8px;
+	    		margin: 5px 4px;
+			}
+			&.active{
+				span{
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+
+#block-block-5{
+	padding: 80px 0;
+}
+
+#block-views-depoimentos-block{
+	padding: 80px 0;
+	.css-depoimentos{
+		.owl-item{
+			.item-odd, .item-even{
+				padding: 20px;
+				.views-field-nothing{
+					padding: 40px;
+					border: 1px solid $border;
+					position: relative;
+					&:before{
+						content: "\f35f";
+						font-family: "Ionicons";
+						position: absolute;
+						top: -20px;
+						background: white;
+						border-radius: 100%; 
+						border: 1px solid $border;
+						display: inline-block;
+						width: 50px;
+						height: 50px;
+						text-align: center;
+						color: $primary;
+						font-size: 28px;
+						padding: 7px 0 0;
+						left: 50%;
+    					margin-left: -25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-node-17{
+	#node-17{
+		margin: 0 0 80px;
+	}
+	.field-name-body{
+		.title{
+			h3{
+				margin: 0 0 15px;
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+		.info, .address{
+			font-size: 18px;
+			margin: 0 0 20px;
+			display: inline-block;
+		}
+		.address{
+			border-bottom: 1px solid $border;
+			padding: 0 0 40px 0; 
+		}
+		.social{
+			display: flex;
+			justify-content: start;
+		}
+	}
+	.form-actions{
+		text-align: right;
+		.webform-submit{
+			width: 200px;
+		}
+	}
+	#block-block-4{
+		border-top: 10px solid $border;
+	}
+}
+
+
+footer{
+	background: $bg-footer;
+	a{
+		color: white;
+		font-size: 16px;
+		font-weight: lighter;
+		&:hover{
+			color: $primary;
+			background-color: transparent !important;
+		}
+	}
+	.menu{
+		display: flex;
+		justify-content: space-between;
+		margin: 40px 0 0;
+	}
+	.social-footer{
+		display: flex;
+		justify-content: space-between;
+		margin: 40px auto 20px;
+		width: 140px;
+		font-size: 18px;
+	}
+	.copyright{
+		font-size: 13px;
+		color: white;
+		margin: 15px 0;
+	}
+}

@@ -23,13 +23,13 @@
 
 			<div class="buttons">
 				<?php if (isset($row->field_field_link[0])): ?>
-					<a href="<?php print $row->field_field_link[0]['raw']['url'] ?>" class="btn btn-default" target="_blank">	
+					<a href="<?php print $row->field_field_link[0]['raw']['url'] ?>" class="btn btn-outline" target="_blank">	
 						<?php print $row->field_field_link[0]['raw']['title'] ?>
 					</a>
 				<?php endif ?>
 
 				<?php if (isset($row->field_field_link_2[0])): ?>
-					<a href="<?php print $row->field_field_link[0]['raw']['url'] ?>" class="btn btn-primary" target="_blank">	
+					<a href="<?php print $row->field_field_link[0]['raw']['url'] ?>" class="btn btn-default" target="_blank">	
 						<?php print $row->field_field_link_2[0]['raw']['title'] ?>
 					</a>
 				<?php endif ?>	
