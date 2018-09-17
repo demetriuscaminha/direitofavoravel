@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Set-2018 às 16:11
+-- Generation Time: 17-Set-2018 às 15:52
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 7.0.24
 
@@ -4461,19 +4461,19 @@ ALTER TABLE `dfav_flood`
 -- AUTO_INCREMENT for table `dfav_image_effects`
 --
 ALTER TABLE `dfav_image_effects`
-  MODIFY `ieid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image effect.', AUTO_INCREMENT=8;
+  MODIFY `ieid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image effect.', AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `dfav_image_styles`
 --
 ALTER TABLE `dfav_image_styles`
-  MODIFY `isid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image style.', AUTO_INCREMENT=8;
+  MODIFY `isid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image style.', AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `dfav_locales_source`
 --
 ALTER TABLE `dfav_locales_source`
-  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.', AUTO_INCREMENT=10760;
+  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.', AUTO_INCREMENT=10766;
 
 --
 -- AUTO_INCREMENT for table `dfav_menu_links`
@@ -4503,7 +4503,7 @@ ALTER TABLE `dfav_node_revision`
 -- AUTO_INCREMENT for table `dfav_queue`
 --
 ALTER TABLE `dfav_queue`
-  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.', AUTO_INCREMENT=205;
+  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.', AUTO_INCREMENT=244;
 
 --
 -- AUTO_INCREMENT for table `dfav_role`
@@ -4545,7 +4545,7 @@ ALTER TABLE `dfav_views_view`
 -- AUTO_INCREMENT for table `dfav_watchdog`
 --
 ALTER TABLE `dfav_watchdog`
-  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.', AUTO_INCREMENT=68;
+  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.', AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `dfav_webform_submissions`
