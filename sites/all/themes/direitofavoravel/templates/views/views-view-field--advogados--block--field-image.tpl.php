@@ -1,3 +1,5 @@
+<?php print $output ?>
+
 <div class="hover">
 	<?php if (isset($row->field_field_email[0])): ?>
 		<div class="email">
