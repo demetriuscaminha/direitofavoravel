@@ -21,7 +21,7 @@
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
             //Player do youtube usando como thumbnail customizável
-            $('.youtube-image-thumbnail').each(function () {
+            $('.youtube-image-thumbnail').not('.no-play').each(function () {
                 var image = $(this);
                 var video = $(this).siblings('.youtube-video');
 
