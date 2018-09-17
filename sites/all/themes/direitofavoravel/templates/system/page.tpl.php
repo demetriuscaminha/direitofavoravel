@@ -108,6 +108,12 @@
   </div>
 <?php endif; ?>
 
+<?php if (!empty($page['full_width_2'])): ?>
+  <div class="full-width-2">
+    <?php print render($page['full_width_2']); ?>
+  </div>
+<?php endif; ?>
+
 <?php if (!empty($page['content_bottom'])): ?>
   <div class="content-bottom container">
     <?php print render($page['content_bottom']); ?>
