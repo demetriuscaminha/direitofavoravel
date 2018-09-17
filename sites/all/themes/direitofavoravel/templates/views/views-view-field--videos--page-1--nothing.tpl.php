@@ -1,4 +1,5 @@
 <?php $image = (isset($row->field_field_image[0])) ? $row->field_field_image[0]['rendered'] : $row->field_field_youtube[0]['rendered'] ?>
+<?php $link = drupal_get_path_alias('node/' . $row->nid); ?>
 
 <div class="youtube-image-thumbnail">
     <?php print drupal_render($image) ?>
@@ -12,7 +13,9 @@
 </div>
 
 <div class="caption">
-    <div class="title"><?php print $row->node_title ?></div>
+    <a class="link-content" href="<?php print $link ?>">
+        <div class="title"><?php print $row->node_title ?></div>
+    </a>
 
     <?php if (isset($row->field_field_name[0])): ?>
         <div class="lawyer"><?php print $row->field_field_name[0]['raw']['value'] ?></div>
