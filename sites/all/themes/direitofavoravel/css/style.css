@@ -763,7 +763,7 @@ h2.block-title {
   font-size: 14px;
   line-height: 28px;
   color: #808080;
-  margin: 60px 0;
+  margin: 40px 0;
 }
 
 #block-block-3 {
@@ -992,6 +992,56 @@ h2.block-title {
 
 .page-node-17 #block-block-4 {
   border-top: 10px solid #E6E6E6;
+}
+
+.page-downloads .css-downloads-page .views-field-field-links-fc {
+  margin: 40px 0;
+}
+
+.page-downloads .css-downloads-page .views-field-field-links-fc .views-label-field-links-fc {
+  color: black;
+  font-size: 18px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  padding: 0 100px 5px 0;
+  margin: 0 0 15px;
+  display: inline-block;
+}
+
+.page-downloads .css-downloads-page .field-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page-downloads .css-downloads-page .field-content ul li {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.page-downloads .css-downloads-page .field-content ul li .file a {
+  color: black;
+}
+
+.page-downloads .css-downloads-page .field-content ul li .file a:hover {
+  color: #00B0CC;
+}
+
+#block-block-7 {
+  background: #F2F2F2;
+  padding: 20px 20px 20px 25px;
+  border-left: 8px solid #00B0CC;
+  margin: 0 0 60px;
+}
+
+#block-block-7 .title h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#block-block-7 .title .body {
+  font-family: "OpenSans", sans;
 }
 
 footer {
