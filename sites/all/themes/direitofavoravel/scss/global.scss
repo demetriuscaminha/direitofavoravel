@@ -767,6 +767,58 @@ h2.block-title{
 	}
 }
 
+.page-downloads{
+	.css-downloads-page{
+		.views-field-field-links-fc{
+			margin: 40px 0;
+			.views-label-field-links-fc{
+				color:black;
+				font-size: 18px;
+				border-bottom: 1px solid black;
+				font-weight: bold;
+				padding:0 100px 5px 0;
+				margin: 0 0 15px;
+				display: inline-block;
+			}
+		}
+		.field-content{
+			ul{
+				margin: 0;
+				padding: 0;
+				li{
+					margin: 0 0 10px;
+					padding: 0;
+					list-style: none;
+					.file{
+						a{
+							color: black;
+							&:hover{
+								color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#block-block-7{
+	background: $bg-light;
+	padding: 20px 20px 20px 25px;
+	border-left: 8px solid $primary;
+	margin: 0 0 60px;
+	.title{
+		h1{
+			font-size: 16px;
+			font-weight: bold;
+			margin: 0;
+		}
+		.body{
+			font-family: $font-open;
+		}
+	}
+}
 
 footer{
 	background: $bg-footer;
