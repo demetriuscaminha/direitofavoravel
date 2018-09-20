@@ -65,6 +65,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular.eot") format("embedded-opentype"), url("../fonts/OpenSansRegular.woff2") format("woff2"), url("../fonts/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular.ttf") format("truetype"), url("../fonts/OpenSansRegular.svg#OpenSansRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSansBold.eot");
+  src: url("../fonts/OpenSansBold.eot") format("embedded-opentype"), url("../fonts/OpenSansBold.woff2") format("woff2"), url("../fonts/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold.ttf") format("truetype"), url("../fonts/OpenSansBold.svg#OpenSansBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
 .btn {
   border-radius: 0;
   padding: 14px 12px;
@@ -132,10 +148,10 @@ body {
 
 body a {
   color: #00B0CC;
-  text-decoration: none;
 }
 
 body a:hover {
+  text-decoration: none;
   color: #185776;
 }
 
@@ -530,6 +546,226 @@ h2.block-title {
   font-size: 22px;
 }
 
+.css-videos-home.css-videos-big .views-field-nothing,
+.css-videos-page.css-videos-big .views-field-nothing {
+  position: relative;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing .caption,
+.css-videos-page.css-videos-big .views-field-nothing .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing .youtube-button-play i,
+.css-videos-page.css-videos-big .views-field-nothing .youtube-button-play i {
+  display: inline-block;
+  text-indent: -99999px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/play-button.png) center center no-repeat;
+  background-size: cover;
+  right: 20px;
+  bottom: 80px;
+  position: absolute;
+  z-index: 1;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing a.link-content,
+.css-videos-page.css-videos-big .views-field-nothing a.link-content {
+  color: white;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing a.link-content .title,
+.css-videos-page.css-videos-big .views-field-nothing a.link-content .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 100px 0 0;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing a.link-content:hover,
+.css-videos-page.css-videos-big .views-field-nothing a.link-content:hover {
+  color: #00B0CC;
+}
+
+.css-videos-home.css-videos-big .views-field-nothing .lawyer, .css-videos-home.css-videos-big .views-field-nothing .body,
+.css-videos-page.css-videos-big .views-field-nothing .lawyer,
+.css-videos-page.css-videos-big .views-field-nothing .body {
+  font-family: "Lora", sans;
+  font-size: 16px;
+  font-style: italic;
+  color: white;
+}
+
+.css-videos-home.css-videos-small .views-row,
+.css-videos-page.css-videos-small .views-row {
+  margin: 0 0 5px;
+}
+
+.css-videos-home.css-videos-small a.link-content,
+.css-videos-page.css-videos-small a.link-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.css-videos-home.css-videos-small a.link-content:hover,
+.css-videos-page.css-videos-small a.link-content:hover {
+  color: #00B0CC;
+}
+
+.css-videos-home.css-videos-small a.link-content .youtube-image-thumbnail,
+.css-videos-page.css-videos-small a.link-content .youtube-image-thumbnail {
+  position: relative;
+}
+
+.css-videos-home.css-videos-small a.link-content .youtube-image-thumbnail img,
+.css-videos-page.css-videos-small a.link-content .youtube-image-thumbnail img {
+  max-width: inherit;
+}
+
+.css-videos-home.css-videos-small a.link-content .youtube-image-thumbnail .youtube-button-play i,
+.css-videos-page.css-videos-small a.link-content .youtube-image-thumbnail .youtube-button-play i {
+  display: inline-block;
+  text-indent: -99999px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/play-button.png) center center no-repeat;
+  background-size: cover;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  z-index: 1;
+  margin-left: -40px;
+  margin-bottom: -40px;
+}
+
+.css-videos-home.css-videos-small a.link-content .caption,
+.css-videos-page.css-videos-small a.link-content .caption {
+  padding: 0 0 0 20px;
+}
+
+.css-videos-home.css-videos-small a.link-content .caption .title,
+.css-videos-page.css-videos-small a.link-content .caption .title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.css-videos-home.css-videos-small a.link-content .caption .title:hover,
+.css-videos-page.css-videos-small a.link-content .caption .title:hover {
+  color: #00B0CC;
+}
+
+.css-videos-home.css-videos-small a.link-content .lawyer, .css-videos-home.css-videos-small a.link-content .body,
+.css-videos-page.css-videos-small a.link-content .lawyer,
+.css-videos-page.css-videos-small a.link-content .body {
+  font-family: "Lora", sans;
+  font-size: 16px;
+  font-style: italic;
+  color: black;
+}
+
+.css-videos-home.css-videos-small a.link-content .body,
+.css-videos-page.css-videos-small a.link-content .body {
+  color: #808080;
+  margin: 15px 0 0;
+}
+
+.css-videos-page.css-videos-big {
+  margin: 0 0 60px;
+}
+
+.css-videos-page.css-videos-small {
+  margin: 0 0 60px;
+}
+
+.css-videos-page.css-videos-small .row {
+  margin: 0 0 20px;
+}
+
+.pager-load-more a {
+  background-color: #00B0CC !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  color: white !important;
+  width: 200px;
+}
+
+.node-type-videos .block-system {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.node-type-videos .wrap-video {
+  position: relative;
+}
+
+.node-type-videos .wrap-video .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.node-type-videos .wrap-video .caption .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 100px 0 0;
+  color: white;
+}
+
+.node-type-videos .wrap-video .youtube-button-play i {
+  display: inline-block;
+  text-indent: -99999px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/play-button.png) center center no-repeat;
+  background-size: cover;
+  right: 20px;
+  bottom: 55px;
+  position: absolute;
+  z-index: 1;
+}
+
+.node-type-videos .wrap-video a.link-content {
+  color: white;
+}
+
+.node-type-videos .wrap-video a.link-content .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 100px 0 0;
+}
+
+.node-type-videos .wrap-video a.link-content:hover {
+  color: #00B0CC;
+}
+
+.node-type-videos .wrap-video .lawyer, .node-type-videos .wrap-video .body {
+  font-family: "Lora", sans;
+  font-size: 16px;
+  font-style: italic;
+  color: white;
+}
+
+.node-type-videos .field-name-body {
+  font-family: "OpenSans", sans;
+  font-size: 14px;
+  line-height: 28px;
+  color: #808080;
+  margin: 60px 0;
+}
+
 #block-block-3 {
   margin: 80px 0;
   display: inline-block;
@@ -683,6 +919,7 @@ h2.block-title {
 }
 
 #block-block-5 {
+  background: #F2F2F2;
   padding: 80px 0;
 }
 

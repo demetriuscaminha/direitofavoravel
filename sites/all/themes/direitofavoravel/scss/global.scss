@@ -5,8 +5,8 @@ body{
 	font-size: 14px;
 	a{
 		color: $primary;
-		text-decoration: none;
 		&:hover{
+			text-decoration: none;
 			color: $dark-primary;
 		}
 	}
@@ -306,11 +306,11 @@ h2.block-title{
 			}
 			.number{
 				font-size: 62px;
-			   font-weight: bold;
-			   color: rgba(16, 176, 201, 0.3);
-			   position: absolute;
-			   left: 30px;
-			   top: 15px;
+				font-weight: bold;
+				color: rgba(16, 176, 201, 0.3);
+				position: absolute;
+				left: 30px;
+				top: 15px;
 			}
 			.col-1{
 				.title{
@@ -354,6 +354,197 @@ h2.block-title{
 	}
 }
 
+.css-videos-home,
+.css-videos-page{
+	&.css-videos-big{
+		.views-field-nothing{
+			position: relative;
+			.caption{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0,0,0,.3);
+				padding: 20px;
+			}
+			.youtube-button-play{
+				i{
+					display: inline-block;
+					text-indent: -99999px;
+					width: 80px;
+					height: 80px;
+					background: transparent url(../images/play-button.png) center center no-repeat;
+					background-size: cover;
+					right: 20px;
+					bottom: 80px;
+					position: absolute;
+					z-index: 1;
+				}
+			}
+			a.link-content{
+				color: white;
+				.title{
+					text-transform: uppercase;
+					font-size: 24px;
+					font-weight: bold;
+					padding: 0 100px 0 0;
+				}
+				&:hover{
+					color: $primary;
+				}
+			}
+			.lawyer, .body{
+				font-family: $font-lora;
+				font-size: 16px;
+				font-style: italic;
+				color: white;
+			}
+		}
+	}
+	&.css-videos-small{
+		.views-row{
+			margin: 0 0 5px;
+		}
+		a.link-content{
+			display: flex;
+			justify-content: space-between;
+			&:hover{
+				color: $primary;
+			}
+			.youtube-image-thumbnail{
+				position: relative;
+				img{
+					max-width: inherit;
+				}
+				.youtube-button-play{
+					i{
+						display: inline-block;
+						text-indent: -99999px;
+						width: 80px;
+						height: 80px;
+						background: transparent url(../images/play-button.png) center center no-repeat;
+						background-size: cover;
+						left: 50%;
+						bottom: 50%;
+						position: absolute;
+						z-index: 1;
+						margin-left: -40px;
+						margin-bottom: -40px;
+					}
+				}
+			}
+			.caption{
+				padding: 0 0 0 20px;
+				.title{
+					text-transform: uppercase;
+					font-size: 20px;
+					font-weight: bold;
+					color: black;
+					&:hover{
+						color: $primary;
+					}
+				}
+			}
+			.lawyer, .body{
+				font-family: $font-lora;
+				font-size: 16px;
+				font-style: italic;
+				color: black;
+			}
+			.body{
+				color: $text-high;
+				margin: 15px 0 0;
+			}
+		}
+	}
+}
+
+.css-videos-page{
+	&.css-videos-big{
+		margin: 0 0 60px;
+	}
+	&.css-videos-small{
+		margin: 0 0 60px;
+		.row{
+			margin: 0 0 20px;
+		}
+	}
+}
+
+.pager-load-more{
+	a{
+		background-color: $primary !important;
+		border-radius: 0 !important;
+		border: 0 !important;
+		color: white !important;
+		width: 200px;
+	}
+}
+
+.node-type-videos{
+	.block-system{
+		width: 720px;
+		margin: 0 auto;
+	}
+	.wrap-video{
+		position: relative;
+		.caption{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0,0,0,.3);
+			padding: 20px;
+			.title{
+				text-transform: uppercase;
+				font-size: 24px;
+				font-weight: bold;
+				padding: 0 100px 0 0;
+				color: white;
+			}
+		}
+		.youtube-button-play{
+			i{
+				display: inline-block;
+				text-indent: -99999px;
+				width: 80px;
+				height: 80px;
+				background: transparent url(../images/play-button.png) center center no-repeat;
+				background-size: cover;
+				right: 20px;
+				bottom: 55px;
+				position: absolute;
+				z-index: 1;
+			}
+		}
+		a.link-content{
+			color: white;
+			.title{
+				text-transform: uppercase;
+				font-size: 24px;
+				font-weight: bold;
+				padding: 0 100px 0 0;
+			}
+			&:hover{
+				color: $primary;
+			}
+		}
+		.lawyer, .body{
+			font-family: $font-lora;
+			font-size: 16px;
+			font-style: italic;
+			color: white;
+		}
+	}
+	.field-name-body{
+		font-family: $font-open;
+		font-size: 14px;
+		line-height: 28px;
+		color: $text-high;
+		margin: 40px 0;
+	}
+}
+
 #block-block-3{
 	margin: 80px 0;
 	display: inline-block;
@@ -386,23 +577,23 @@ h2.block-title{
 			position: relative;
 			.hover{
 				color: white;
-			    position: absolute;
-			    opacity: 0;
-			    top: 50px;
-			    left: 0;
-			    margin: 0 15px;
-			    background: rgba(0,176,204,.6);
-			    padding: 20px;
-			    height: 312px;
-			    transition: 0.3s;
-			    .email{
-			    	margin: 0 0 10px;
-			    	a{
-			    		color: white;
-			    		font-weight: bold;
-			    	}
-			    }
-			    .social{
+				position: absolute;
+				opacity: 0;
+				top: 50px;
+				left: 0;
+				margin: 0 15px;
+				background: rgba(0,176,204,.6);
+				padding: 20px;
+				height: 312px;
+				transition: 0.3s;
+				.email{
+					margin: 0 0 10px;
+					a{
+						color: white;
+						font-weight: bold;
+					}
+				}
+				.social{
 					display: flex;
 					justify-content: space-between;
 					a{
@@ -413,18 +604,18 @@ h2.block-title{
 								color: $primary;
 							}
 						}					
-			    		i{
-				    		color: white;
-				    		border: 1px solid white;
-				    		border-radius: 100%;
-				    		padding: 10px;
-				    		display: inline-block;
-				    		width: 36px;
-				    		height: 36px;
-				    		text-align: center;
-				    	}
+						i{
+							color: white;
+							border: 1px solid white;
+							border-radius: 100%;
+							padding: 10px;
+							display: inline-block;
+							width: 36px;
+							height: 36px;
+							text-align: center;
+						}
 					}
-			    }
+				}
 			}
 			&:hover{
 				.hover{
@@ -488,8 +679,8 @@ h2.block-title{
 			span{
 				background: $text-medium;
 				width: 8px;
-	    		height: 8px;
-	    		margin: 5px 4px;
+				height: 8px;
+				margin: 5px 4px;
 			}
 			&.active{
 				span{
@@ -501,6 +692,7 @@ h2.block-title{
 }
 
 #block-block-5{
+	background: $bg-light;
 	padding: 80px 0;
 }
 
@@ -530,7 +722,7 @@ h2.block-title{
 						font-size: 28px;
 						padding: 7px 0 0;
 						left: 50%;
-    					margin-left: -25px;
+						margin-left: -25px;
 					}
 				}
 			}

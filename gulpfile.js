@@ -57,7 +57,7 @@ gulp.task('default', ['sassdev', 'sassprod', 'watch']);
 gulp.task('server', ['sassdev', 'sassprod'], function() {
 
     browserSync.init({
-        server: "./"
+        proxy: "direitofavoravel.dev"
     });
 
     gulp.watch(PATH.scss + '*.scss', ['sassdev', 'sassprod']);
