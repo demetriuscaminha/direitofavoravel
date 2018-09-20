@@ -3,8 +3,8 @@
 <?php if (isset($node) && $node->type == 'videos'): ?>
 	<?php $title = $node->title ?>
 <?php else: ?>
-	<?php global $titleDownloads ?>
-    <?php $title = (isset($titleDownloads)) ? $titleDownloads : $row->node_title ?>
+	<?php global $titleExame ?>
+    <?php $title = (isset($titleExame)) ? $titleExame : $row->node_title ?>
 <?php endif ?>
 
 <?php $image = image_style_url('banner_internas', $row->field_field_image[0]['raw']['uri']); ?>

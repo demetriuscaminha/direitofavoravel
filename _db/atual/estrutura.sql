@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Set-2018 às 15:52
--- Versão do servidor: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: 20-Set-2018 às 21:11
+-- Versão do servidor: 10.1.28-MariaDB
+-- PHP Version: 7.0.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -496,6 +496,73 @@ CREATE TABLE `dfav_date_format_type` (
   `title` varchar(255) NOT NULL COMMENT 'The human readable name of the format type.',
   `locked` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Whether or not this is a system provided format.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores configured date format types.';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_ds_fields`
+--
+
+CREATE TABLE `dfav_ds_fields` (
+  `field` varchar(32) NOT NULL DEFAULT '' COMMENT 'The machine name of the field.',
+  `label` varchar(128) NOT NULL DEFAULT '' COMMENT 'The label of the field.',
+  `field_type` smallint(6) NOT NULL DEFAULT '0' COMMENT 'The type of of the field',
+  `entities` longblob COMMENT 'The entities for this field.',
+  `ui_limit` longblob COMMENT 'The UI limit for this field.',
+  `properties` longblob COMMENT 'The properties for this field.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The table that holds custom fields managed by Display Suite.';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_ds_field_settings`
+--
+
+CREATE TABLE `dfav_ds_field_settings` (
+  `id` varchar(255) NOT NULL DEFAULT '' COMMENT 'The unique id this setting.',
+  `entity_type` varchar(32) NOT NULL DEFAULT '' COMMENT 'The name of the entity.',
+  `bundle` varchar(64) NOT NULL DEFAULT '' COMMENT 'The name of the entity.',
+  `view_mode` varchar(64) NOT NULL DEFAULT '' COMMENT 'The name of the view_mode.',
+  `settings` longblob COMMENT 'The Display Suite field settings for this layout.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The table that holds Display Suite field settings per...';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_ds_layout_settings`
+--
+
+CREATE TABLE `dfav_ds_layout_settings` (
+  `id` varchar(255) NOT NULL DEFAULT '' COMMENT 'The unique id the layout.',
+  `entity_type` varchar(32) NOT NULL DEFAULT '' COMMENT 'The name of the entity.',
+  `bundle` varchar(64) NOT NULL DEFAULT '' COMMENT 'The name of the entity.',
+  `view_mode` varchar(64) NOT NULL DEFAULT '' COMMENT 'The name of the view_mode.',
+  `layout` varchar(64) NOT NULL DEFAULT '' COMMENT 'The name of the layout.',
+  `settings` longblob COMMENT 'The settings for this layout.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The table that holds the layouts configuration.';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_ds_vd`
+--
+
+CREATE TABLE `dfav_ds_vd` (
+  `vd` varchar(128) NOT NULL DEFAULT '' COMMENT 'The primary identifier for the views display.',
+  `label` varchar(132) NOT NULL DEFAULT '' COMMENT 'The label for the views display.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The base table for views displays.';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dfav_ds_view_modes`
+--
+
+CREATE TABLE `dfav_ds_view_modes` (
+  `view_mode` varchar(64) NOT NULL DEFAULT '' COMMENT 'The machine name of the view mode.',
+  `label` varchar(32) NOT NULL DEFAULT '' COMMENT 'The label of the view mode.',
+  `entities` longblob COMMENT 'The entities for this view mode.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The table that holds custom view modes managed by Display...';
 
 -- --------------------------------------------------------
 
@@ -2196,7 +2263,8 @@ CREATE TABLE `dfav_node_revision` (
   `status` int(11) NOT NULL DEFAULT '1' COMMENT 'Boolean indicating whether the node (at the time of this revision) is published (visible to non-administrators).',
   `comment` int(11) NOT NULL DEFAULT '0' COMMENT 'Whether comments are allowed on this node (at the time of this revision): 0 = no, 1 = closed (read only), 2 = open (read/write).',
   `promote` int(11) NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether the node (at the time of this revision) should be displayed on the front page.',
-  `sticky` int(11) NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether the node (at the time of this revision) should be displayed at the top of lists in which it appears.'
+  `sticky` int(11) NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether the node (at the time of this revision) should be displayed at the top of lists in which it appears.',
+  `ds_switch` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores information about each saved version of a dfav_node.';
 
 -- --------------------------------------------------------
@@ -2996,6 +3064,42 @@ ALTER TABLE `dfav_date_format_locale`
 ALTER TABLE `dfav_date_format_type`
   ADD PRIMARY KEY (`type`),
   ADD KEY `title` (`title`);
+
+--
+-- Indexes for table `dfav_ds_fields`
+--
+ALTER TABLE `dfav_ds_fields`
+  ADD PRIMARY KEY (`field`);
+
+--
+-- Indexes for table `dfav_ds_field_settings`
+--
+ALTER TABLE `dfav_ds_field_settings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ds_entity` (`entity_type`),
+  ADD KEY `ds_bundle` (`bundle`),
+  ADD KEY `ds_view_mode` (`view_mode`);
+
+--
+-- Indexes for table `dfav_ds_layout_settings`
+--
+ALTER TABLE `dfav_ds_layout_settings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ds_entity` (`entity_type`),
+  ADD KEY `ds_bundle` (`bundle`),
+  ADD KEY `ds_view_mode` (`view_mode`);
+
+--
+-- Indexes for table `dfav_ds_vd`
+--
+ALTER TABLE `dfav_ds_vd`
+  ADD PRIMARY KEY (`vd`);
+
+--
+-- Indexes for table `dfav_ds_view_modes`
+--
+ALTER TABLE `dfav_ds_view_modes`
+  ADD PRIMARY KEY (`view_mode`);
 
 --
 -- Indexes for table `dfav_field_collection_item`
@@ -4378,151 +4482,181 @@ ALTER TABLE `dfav_webform_submitted_data`
 --
 ALTER TABLE `dfav_authmap`
   MODIFY `aid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique authmap ID.';
+
 --
 -- AUTO_INCREMENT for table `dfav_block`
 --
 ALTER TABLE `dfav_block`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique block ID.', AUTO_INCREMENT=160;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique block ID.', AUTO_INCREMENT=163;
+
 --
 -- AUTO_INCREMENT for table `dfav_blocked_ips`
 --
 ALTER TABLE `dfav_blocked_ips`
   MODIFY `iid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: unique ID for IP addresses.';
+
 --
 -- AUTO_INCREMENT for table `dfav_block_custom`
 --
 ALTER TABLE `dfav_block_custom`
   MODIFY `bid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The block’s dfav_block.bid.', AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `dfav_clientside_validation_settings`
 --
 ALTER TABLE `dfav_clientside_validation_settings`
   MODIFY `cvsid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for the clientside validation settings';
+
 --
 -- AUTO_INCREMENT for table `dfav_conditional_fields`
 --
 ALTER TABLE `dfav_conditional_fields`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a dependency.', AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `dfav_date_formats`
 --
 ALTER TABLE `dfav_date_formats`
   MODIFY `dfid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The date format identifier.', AUTO_INCREMENT=36;
+
 --
 -- AUTO_INCREMENT for table `dfav_field_collection_item`
 --
 ALTER TABLE `dfav_field_collection_item`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique field collection item ID.', AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `dfav_field_collection_item_revision`
 --
 ALTER TABLE `dfav_field_collection_item_revision`
   MODIFY `revision_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique revision ID.', AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `dfav_field_config`
 --
 ALTER TABLE `dfav_field_config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field', AUTO_INCREMENT=41;
+
 --
 -- AUTO_INCREMENT for table `dfav_field_config_instance`
 --
 ALTER TABLE `dfav_field_config_instance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field instance', AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a field instance', AUTO_INCREMENT=82;
+
 --
 -- AUTO_INCREMENT for table `dfav_field_group`
 --
 ALTER TABLE `dfav_field_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a group', AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a group', AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `dfav_file_managed`
 --
 ALTER TABLE `dfav_file_managed`
-  MODIFY `fid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'File ID.', AUTO_INCREMENT=39;
+  MODIFY `fid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'File ID.', AUTO_INCREMENT=45;
+
 --
 -- AUTO_INCREMENT for table `dfav_flood`
 --
 ALTER TABLE `dfav_flood`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique flood event ID.', AUTO_INCREMENT=3;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique flood event ID.';
+
 --
 -- AUTO_INCREMENT for table `dfav_image_effects`
 --
 ALTER TABLE `dfav_image_effects`
   MODIFY `ieid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image effect.', AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `dfav_image_styles`
 --
 ALTER TABLE `dfav_image_styles`
   MODIFY `isid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for an image style.', AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `dfav_locales_source`
 --
 ALTER TABLE `dfav_locales_source`
-  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.', AUTO_INCREMENT=10766;
+  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier of this string.', AUTO_INCREMENT=11000;
+
 --
 -- AUTO_INCREMENT for table `dfav_menu_links`
 --
 ALTER TABLE `dfav_menu_links`
-  MODIFY `mlid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The menu link ID (mlid) is the integer primary key.', AUTO_INCREMENT=571;
+  MODIFY `mlid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The menu link ID (mlid) is the integer primary key.', AUTO_INCREMENT=634;
+
 --
 -- AUTO_INCREMENT for table `dfav_metatag_config`
 --
 ALTER TABLE `dfav_metatag_config`
   MODIFY `cid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a metatag configuration set.', AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `dfav_node`
 --
 ALTER TABLE `dfav_node`
-  MODIFY `nid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a node.', AUTO_INCREMENT=32;
+  MODIFY `nid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for a node.', AUTO_INCREMENT=47;
+
 --
 -- AUTO_INCREMENT for table `dfav_node_revision`
 --
 ALTER TABLE `dfav_node_revision`
-  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for this version.', AUTO_INCREMENT=32;
+  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The primary identifier for this version.', AUTO_INCREMENT=47;
+
 --
 -- AUTO_INCREMENT for table `dfav_queue`
 --
 ALTER TABLE `dfav_queue`
-  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.', AUTO_INCREMENT=283;
+  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique item ID.', AUTO_INCREMENT=327;
+
 --
 -- AUTO_INCREMENT for table `dfav_role`
 --
 ALTER TABLE `dfav_role`
   MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique role ID.', AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `dfav_sequences`
 --
 ALTER TABLE `dfav_sequences`
-  MODIFY `value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The value of the sequence.', AUTO_INCREMENT=39;
+  MODIFY `value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The value of the sequence.', AUTO_INCREMENT=42;
+
 --
 -- AUTO_INCREMENT for table `dfav_taxonomy_term_data`
 --
 ALTER TABLE `dfav_taxonomy_term_data`
   MODIFY `tid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique term ID.', AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `dfav_taxonomy_vocabulary`
 --
 ALTER TABLE `dfav_taxonomy_vocabulary`
   MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique vocabulary ID.', AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `dfav_url_alias`
 --
 ALTER TABLE `dfav_url_alias`
-  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'A unique path alias identifier.', AUTO_INCREMENT=42;
+  MODIFY `pid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'A unique path alias identifier.', AUTO_INCREMENT=57;
+
 --
 -- AUTO_INCREMENT for table `dfav_views_view`
 --
 ALTER TABLE `dfav_views_view`
-  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The view ID of the field, defined by the database.', AUTO_INCREMENT=8;
+  MODIFY `vid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The view ID of the field, defined by the database.', AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `dfav_watchdog`
 --
 ALTER TABLE `dfav_watchdog`
-  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.', AUTO_INCREMENT=135;
+  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key: Unique watchdog event ID.', AUTO_INCREMENT=290;
+
 --
 -- AUTO_INCREMENT for table `dfav_webform_submissions`
 --
 ALTER TABLE `dfav_webform_submissions`
-  MODIFY `sid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The unique identifier for this submission.';COMMIT;
+  MODIFY `sid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The unique identifier for this submission.';
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

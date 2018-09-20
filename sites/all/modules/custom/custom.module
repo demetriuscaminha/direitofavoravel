@@ -2,11 +2,11 @@
 
 function custom_init() {
   switch ($_GET['q']) {
-    case 'downloads':
-      $result = views_get_view_result('downloads', 'page');
+    case 'exame-oab':
+      $result = views_get_view_result('exame_oab', 'page');
       if (isset($result[0])) {
-        global $titleDownloads;
-        $titleDownloads = $result[0]->node_title;
+        global $titleExame;
+        $titleExame = $result[0]->node_title;
       }       
       break;
     
