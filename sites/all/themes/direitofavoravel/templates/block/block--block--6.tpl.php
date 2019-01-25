@@ -7,11 +7,27 @@
     <?php print render($title_suffix); ?>
 
     <?php $node = menu_get_object() ?>
-    <?php global $cursoPresencialNid ?>
-    <?php $node = (!empty($node)) ? $node : node_load($cursoPresencialNid) ?>
+    <?php global $cursoOnlineNid ?>
+
+    <?php $node = (!empty($node)) ? $node : node_load($cursoOnlineNid) ?>
     <div class="content">
         <div class="link">
-            <a href="#" class="btn btn-danger">INSCREVA-SE</a>
+            <?php 
+                switch ($node->field_registration['und'][0]['value']) {
+                    case 0:
+                        print '<a href="#" class="btn btn-danger">INSCREVA-SE</a>';            
+                        break;
+                    
+                    case 1:
+                        print '<a href="#" class="btn btn-warning">RESERVA</a>';
+                        break;
+
+                    case 2:
+                        print '<div class="btn btn-danger">ENCERRADAS</div>';
+                        break;
+                }
+            ?>
+            
         </div>
         <div class="info">
             <div class="title"><h4>Informações</h4></div>

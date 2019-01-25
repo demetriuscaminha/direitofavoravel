@@ -1,6 +1,6 @@
 <?php $node = menu_get_object() ?>
-<?php global $cursoPresencialNid ?>
-<?php global $cursoPresencialBanner ?>
+<?php global $cursoOnlineNid ?>
+<?php global $cursoOnlineBanner ?>
 
 <?php if (!empty($node)): ?>
 	<!-- para página interna do conteúdo -->
@@ -21,10 +21,10 @@
 	        </div>
 	    </div>
 	</div>
-<?php elseif (!empty($cursoPresencialNid && $cursoPresencialBanner)): ?>
+<?php elseif (!empty($cursoOnlineNid && $cursoOnlineBanner)): ?>
 	<!-- para listagem com ultimo conteúdo -->
-	<?php $node = node_load($cursoPresencialNid) ?>
-	<?php $image = image_style_url('banner_internas', $cursoPresencialBanner); ?>
+	<?php $node = node_load($cursoOnlineNid) ?>
+	<?php $image = image_style_url('banner_internas', $cursoOnlineBanner); ?>
 	<div class="banner-internas nid-<?php print $row->nid ?>" style="height:250px;background-position: center;background-image: url(<?php print $image ?>)">
 	    <div class="container">
 	        <div class="caption text-center">
