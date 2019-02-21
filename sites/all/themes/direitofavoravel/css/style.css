@@ -177,8 +177,6 @@ h2.block-title {
   border: 0;
   margin-bottom: 0;
   padding: 20px 0; }
-  .navbar a.logo {
-    display: none; }
   .navbar .menu {
     display: flex;
     justify-content: space-between;
@@ -196,13 +194,6 @@ h2.block-title {
       background: transparent; }
       .navbar .menu li.active a {
         background: transparent; }
-    .navbar .menu li:nth-child(5) {
-      display: inline-block;
-      text-indent: -99999px;
-      width: 100px;
-      height: 100px;
-      background: transparent url(../images/logo.png) no-repeat center center;
-      cursor: pointer; }
 
 .css-super-banner {
   position: relative; }
