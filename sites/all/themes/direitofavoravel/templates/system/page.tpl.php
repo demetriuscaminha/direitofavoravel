@@ -5,7 +5,13 @@
 <?php endif ?>
 
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="<?php print $container_class; ?>">
+
+    <?php if ($logo): ?>
+      <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+      </a>
+    <?php endif; ?>
+    
     <div class="navbar-header">
       <?php if (!empty($site_name)): ?>
         <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
@@ -36,15 +42,8 @@
         </nav>
       </div>
     <?php endif; ?>
-  </div>
 
-  <div class="container text-center">
-    <?php if ($logo): ?>
-      <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    <?php endif; ?>  
-  </div>
+
 </header>
 
 <?php if (isset($page['banner'])): ?>
