@@ -81,6 +81,8 @@ h2.block-title{
 	border: 0;
 	margin-bottom: 0;
 	padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
 	.menu{
 		display: flex;
 		justify-content: space-between;
@@ -92,6 +94,7 @@ h2.block-title{
 				color: black;
 				text-transform: uppercase;
 				font-weight: bold;
+				padding: 20px 0 0 30px;
 				&:hover{
 					color: $primary;
 					background-color: transparent !important; 
@@ -104,6 +107,13 @@ h2.block-title{
 				}
 			}
 		}
+	}
+	.logo{
+		margin: 0;
+		width: 300px;
+	}
+	.navbar-collapse{
+		padding: 0;
 	}
 }
 .css-super-banner{
@@ -656,6 +666,14 @@ h2.block-title{
 		font-size: 18px;
 		font-style: italic;
 		padding: 0 180px;
+	}
+	.views-field-field-link{
+		a{
+			color: white;
+			&:hover{
+				color: $dark-primary;
+			}
+		}
 	}
 }
 

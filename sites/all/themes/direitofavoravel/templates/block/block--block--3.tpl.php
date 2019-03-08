@@ -10,11 +10,12 @@
 		<div class="col-md-3 col-xs-12 left-sidebar">
 			<div class="header">
 				<div class="title">Equipe Confiável</div>
-				<div class="sub-title">Nossos Advogados</div>
+				<div class="sub-title">Nossos Professores</div>
 			</div>
 
 			<div class="body">
-				Eunulla nisiinte aliqua rerit ad teger uada. Nec massacra libero amus cubilia fusce. Eunulla ullam lum tesque mnulla metuscra. Metussed tempusp liquam et lus penatib dictumst egestas elementu
+			Nosso time é composto de profissionais qualificados, com vivência de mercado, que transmitem com confiança a prática jurídica e os ensinamentos necessários para o crescimento significativo de nossos alunos e ouvintes.
+
 			</div>
 
 			<div class="link">

@@ -8,7 +8,7 @@
 
     <?php if ($logo): ?>
       <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="img-responsive" />
       </a>
     <?php endif; ?>
     

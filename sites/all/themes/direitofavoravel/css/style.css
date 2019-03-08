@@ -176,7 +176,9 @@ h2.block-title {
   background: transparent;
   border: 0;
   margin-bottom: 0;
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; }
   .navbar .menu {
     display: flex;
     justify-content: space-between;
@@ -186,7 +188,8 @@ h2.block-title {
       background: transparent;
       color: black;
       text-transform: uppercase;
-      font-weight: bold; }
+      font-weight: bold;
+      padding: 20px 0 0 30px; }
       .navbar .menu li a:hover {
         color: #00B0CC;
         background-color: transparent !important; }
@@ -194,6 +197,11 @@ h2.block-title {
       background: transparent; }
       .navbar .menu li.active a {
         background: transparent; }
+  .navbar .logo {
+    margin: 0;
+    width: 300px; }
+  .navbar .navbar-collapse {
+    padding: 0; }
 
 .css-super-banner {
   position: relative; }
@@ -644,6 +652,10 @@ h2.block-title {
     font-size: 18px;
     font-style: italic;
     padding: 0 180px; }
+  .css-mentoria .views-field-field-link a {
+    color: white; }
+    .css-mentoria .views-field-field-link a:hover {
+      color: #185776; }
 
 .content-bottom {
   background: #F8F8F8; }
