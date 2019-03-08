@@ -30,6 +30,11 @@
                         $(image).addClass('hidden');
                         video.removeClass('hidden');
 
+                        var caption = $(".video-caption");
+                        if (caption.length != 0) {
+                            caption.addClass('hidden');
+                        }
+
                         var iframe_id = video.find('iframe').attr('id');
                         callPlayer(iframe_id, 'playVideo');
                         ev.preventDefault();

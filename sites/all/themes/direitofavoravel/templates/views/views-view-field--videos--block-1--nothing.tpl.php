@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="caption">
+    <div class="caption video-caption">
         <div class="title"><?php print $row->node_title ?></div>
 
         <?php if (isset($row->field_field_name[0])): ?>

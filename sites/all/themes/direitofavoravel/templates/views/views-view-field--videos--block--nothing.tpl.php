@@ -12,7 +12,7 @@
     <iframe id="youtube-player--<?php print $row->nid ?>" width="560px" height="380px" src="https://www.youtube.com/embed/<?php print $row->field_field_youtube[0]['raw']['video_id'] ?>?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;wmode=opaque&amp;controls=0&amp;autohide=1&amp;iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-<div class="caption">
+<div class="caption video-caption">
     <a class="link-content" href="<?php print $link ?>">
         <div class="title"><?php print $row->node_title ?></div>
     </a>

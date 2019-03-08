@@ -22,7 +22,8 @@
     ?>
 	<div class="wrap-video">
 		<div class="youtube-image-thumbnail">
-		    <?php print drupal_render($content['field_image']) ?>
+		    <?php $image = ($content['field_image']) ? $content['field_image']: $content['field_youtube'] ?>
+        <?php print render($image) ?>
 		    <div class="youtube-button-play">
 		        <i class="far fa-play-circle"></i>
 		    </div>
@@ -32,7 +33,7 @@
 	    	<iframe id="youtube-player" width="100%" height="480px" src="https://www.youtube.com/embed/<?php print $content['field_youtube']['#items'][0]['video_id'] ?>?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;wmode=opaque&amp;controls=0&amp;autohide=1&amp;iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe>
 		</div>
 
-		<div class="caption">
+		<div class="caption video-caption">
 		    <div class="title"><?php print $node->title ?></div>
 		    
 		    <?php if (isset($node->field_name[LANGUAGE_NONE][0])): ?>
