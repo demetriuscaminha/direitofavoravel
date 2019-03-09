@@ -216,8 +216,10 @@ h2.block-title{
 		background-position: center center;
 		color: white;
 		margin: 0 0 80px;
-		padding: 70px 0;
+		padding: 0;
 		line-height: 1.1;
+		display: flex;
+		align-items: center;
 		.area{
 			font-size: 24px;
 			font-family: $font-lora;
@@ -518,6 +520,9 @@ h2.block-title{
 	&.css-videos-small{
 		.views-row{
 			margin: 0 0 5px;
+		}
+		.views-field-nothing{
+			margin: 0 0 20px;
 		}
 		a.link-content{
 			display: flex;

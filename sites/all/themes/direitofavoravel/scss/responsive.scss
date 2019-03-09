@@ -99,4 +99,49 @@
          }
       }
    }
+   .css-videos-page.css-videos-big {
+      .views-field-nothing{
+         margin: 0 0 40px;
+         position: relative;
+         .caption{
+            position: relative;
+            background: rgba(0,0,0,1);
+            padding: 10px 20px;
+            .title{
+               font-size: 18px !important;
+            }
+            .lawyer{
+               font-size: 14px !important;
+            }
+            .body{
+               font-size: 14px !important;
+            }
+         }
+      }
+      .youtube-video{
+         iframe{
+            width: 100%;
+         }
+      }
+      .youtube-button-play{
+         display: none;
+      }
+   }
+   .css-videos-page.css-videos-small {
+      a.link-content{
+         display: block;
+         margin: 0 0 30px;
+         .youtube-image-thumbnail{
+            text-align: center;
+            img{
+               display: inline-block;
+            }
+         }
+         .caption{
+            margin: 15px 0 0;
+            padding: 0;
+            text-align: center;
+         }
+      }
+   }
 }

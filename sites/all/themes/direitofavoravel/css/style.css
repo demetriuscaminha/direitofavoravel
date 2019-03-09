@@ -299,8 +299,10 @@ h2.block-title {
   background-position: center center;
   color: white;
   margin: 0 0 80px;
-  padding: 70px 0;
-  line-height: 1.1; }
+  padding: 0;
+  line-height: 1.1;
+  display: flex;
+  align-items: center; }
   .css-banner-internas .banner-internas .area {
     font-size: 24px;
     font-family: "Lora", sans;
@@ -534,6 +536,10 @@ h2.block-title {
 .css-videos-home.css-videos-small .views-row,
 .css-videos-page.css-videos-small .views-row {
   margin: 0 0 5px; }
+
+.css-videos-home.css-videos-small .views-field-nothing,
+.css-videos-page.css-videos-small .views-field-nothing {
+  margin: 0 0 20px; }
 
 .css-videos-home.css-videos-small a.link-content,
 .css-videos-page.css-videos-small a.link-content {
@@ -1003,4 +1009,32 @@ footer {
   #block-block-6 {
     margin: 0 0 60px; }
     #block-block-6 .info-content .wrap {
-      margin: 0 0 15px; } }
+      margin: 0 0 15px; }
+  .css-videos-page.css-videos-big .views-field-nothing {
+    margin: 0 0 40px;
+    position: relative; }
+    .css-videos-page.css-videos-big .views-field-nothing .caption {
+      position: relative;
+      background: black;
+      padding: 10px 20px; }
+      .css-videos-page.css-videos-big .views-field-nothing .caption .title {
+        font-size: 18px !important; }
+      .css-videos-page.css-videos-big .views-field-nothing .caption .lawyer {
+        font-size: 14px !important; }
+      .css-videos-page.css-videos-big .views-field-nothing .caption .body {
+        font-size: 14px !important; }
+  .css-videos-page.css-videos-big .youtube-video iframe {
+    width: 100%; }
+  .css-videos-page.css-videos-big .youtube-button-play {
+    display: none; }
+  .css-videos-page.css-videos-small a.link-content {
+    display: block;
+    margin: 0 0 30px; }
+    .css-videos-page.css-videos-small a.link-content .youtube-image-thumbnail {
+      text-align: center; }
+      .css-videos-page.css-videos-small a.link-content .youtube-image-thumbnail img {
+        display: inline-block; }
+    .css-videos-page.css-videos-small a.link-content .caption {
+      margin: 15px 0 0;
+      padding: 0;
+      text-align: center; } }
