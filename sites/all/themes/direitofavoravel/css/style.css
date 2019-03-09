@@ -129,7 +129,38 @@ h2.block-title {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 0 0 40px; }
+  margin: 0 0 60px;
+  position: relative;
+  color: #007d9a; }
+  h2.block-title:before {
+    background: white;
+    padding: 0 8px;
+    content: "\f209";
+    font-family: "Ionicons";
+    color: #007d9a;
+    font-size: 16px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -15px;
+    z-index: 2; }
+  h2.block-title:after {
+    content: "";
+    width: 160px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    top: 47px;
+    background: #007d9a; }
 
 .top-site {
   background: black;
@@ -207,9 +238,9 @@ h2.block-title {
   position: relative; }
   .css-super-banner .banner-superbaner {
     height: 520px;
-    background-size: cover;
     background-position: center center;
-    color: white; }
+    color: white;
+    border-bottom: 6px solid #185776; }
     .css-super-banner .banner-superbaner .content-info {
       margin: 120px 0 0; }
       .css-super-banner .banner-superbaner .content-info .text-top {
@@ -229,6 +260,7 @@ h2.block-title {
       .css-super-banner .banner-superbaner .content-info .buttons .btn-outline {
         margin: 0 20px 0 0; }
   .css-super-banner .banner-bottom {
+    display: none;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -260,12 +292,11 @@ h2.block-title {
       text-align: right; }
 
 .css-banner-internas .banner-internas {
-  height: 250px !important;
   background-size: cover;
   background-position: center center;
   color: white;
   margin: 0 0 80px;
-  padding: 90px 0;
+  padding: 70px 0;
   line-height: 1.1; }
   .css-banner-internas .banner-internas .area {
     font-size: 24px;
@@ -281,8 +312,10 @@ h2.block-title {
   .css-banner-internas .banner-internas .caption h1 {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 36px;
-    margin: 0; }
+    font-size: 28px;
+    margin: 0;
+    padding: 0 160px;
+    text-shadow: 1px 1px 0px #185776; }
 
 .region-sidebar-second .link .btn {
   width: 100%; }
@@ -413,7 +446,7 @@ h2.block-title {
     background: transparent url(../images/play-button.png) center center no-repeat;
     background-size: cover;
     right: 20px;
-    bottom: 80px;
+    top: -40px;
     position: absolute;
     z-index: 1; }
   .css-videos-home.css-videos-big .views-field-nothing a.link-content,
@@ -473,7 +506,7 @@ h2.block-title {
     .css-videos-home.css-videos-small a.link-content .caption .title,
     .css-videos-page.css-videos-small a.link-content .caption .title {
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
       color: black; }
       .css-videos-home.css-videos-small a.link-content .caption .title:hover,
@@ -483,13 +516,13 @@ h2.block-title {
   .css-videos-page.css-videos-small a.link-content .lawyer,
   .css-videos-page.css-videos-small a.link-content .body {
     font-family: "Lora", sans;
-    font-size: 16px;
+    font-size: 14px;
     font-style: italic;
     color: black; }
   .css-videos-home.css-videos-small a.link-content .body,
   .css-videos-page.css-videos-small a.link-content .body {
     color: #808080;
-    margin: 15px 0 0; }
+    margin: 5px 0 0; }
 
 .css-videos-page.css-videos-big {
   margin: 0 0 60px; }
@@ -652,10 +685,16 @@ h2.block-title {
     font-size: 18px;
     font-style: italic;
     padding: 0 180px; }
-  .css-mentoria .views-field-field-link a {
-    color: white; }
-    .css-mentoria .views-field-field-link a:hover {
-      color: #185776; }
+  .css-mentoria .views-field-field-link {
+    margin: 20px 0; }
+    .css-mentoria .views-field-field-link a {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid white;
+      color: white; }
+      .css-mentoria .views-field-field-link a:hover {
+        background: white;
+        color: black; }
 
 .content-bottom {
   background: #F8F8F8; }
@@ -672,6 +711,10 @@ h2.block-title {
 #block-block-5 {
   background: #F2F2F2;
   padding: 80px 0; }
+  #block-block-5 .video-big-area {
+    padding: 0; }
+  #block-block-5 h2.block-title:before {
+    background: #F2F2F2; }
 
 #block-views-depoimentos-block {
   padding: 80px 0; }
@@ -698,6 +741,29 @@ h2.block-title {
         padding: 7px 0 0;
         left: 50%;
         margin-left: -25px; }
+      #block-views-depoimentos-block .css-depoimentos .owl-item .item-odd .views-field-nothing .name, #block-views-depoimentos-block .css-depoimentos .owl-item .item-even .views-field-nothing .name {
+        font-weight: normal; }
+
+.node-type-page .node {
+  width: 940px;
+  margin: 0 auto; }
+
+.node-type-page .sub-title {
+  margin: 0 0 40px;
+  font: bold 16px "OpenSans", sans; }
+
+.node-type-page .field-name-body, .node-type-page .field-name-field-text-headlight {
+  font: normal 14px "OpenSans", sans;
+  line-height: 26px;
+  margin: 0 0 60px; }
+  .node-type-page .field-name-body .mission-values, .node-type-page .field-name-field-text-headlight .mission-values {
+    margin: 40px auto 0; }
+    .node-type-page .field-name-body .mission-values .icon, .node-type-page .field-name-field-text-headlight .mission-values .icon {
+      padding: 0 80px;
+      margin: 0 0 25px; }
+    .node-type-page .field-name-body .mission-values .title, .node-type-page .field-name-field-text-headlight .mission-values .title {
+      font: bold 16px "OpenSans", sans;
+      margin: 15px 0; }
 
 .page-node-17 #node-17 {
   margin: 0 0 80px; }
@@ -751,6 +817,37 @@ h2.block-title {
       .page-downloads .css-downloads-page .field-content ul li .file a:hover {
         color: #00B0CC; }
 
+.page-downloads .css-page-downloads .views-row {
+  margin: 0 0 10px; }
+  .page-downloads .css-page-downloads .views-row .views-field-field-file a {
+    color: black;
+    font-weight: bold; }
+    .page-downloads .css-page-downloads .views-row .views-field-field-file a:hover {
+      color: #00B0CC; }
+
+.page-exame-oab .css-downloads-page .views-field-field-links-fc {
+  margin: 40px 0; }
+  .page-exame-oab .css-downloads-page .views-field-field-links-fc .views-label-field-links-fc {
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding: 0 100px 5px 0;
+    margin: 0 0 15px;
+    display: inline-block; }
+
+.page-exame-oab .css-downloads-page .field-content ul {
+  margin: 0;
+  padding: 0; }
+  .page-exame-oab .css-downloads-page .field-content ul li {
+    margin: 0 0 10px;
+    padding: 0;
+    list-style: none; }
+    .page-exame-oab .css-downloads-page .field-content ul li .file a {
+      color: black; }
+      .page-exame-oab .css-downloads-page .field-content ul li .file a:hover {
+        color: #00B0CC; }
+
 #block-block-7 {
   background: #F2F2F2;
   padding: 20px 20px 20px 25px;
@@ -762,6 +859,9 @@ h2.block-title {
     margin: 0; }
   #block-block-7 .title .body {
     font-family: "OpenSans", sans; }
+
+.pager-load-more {
+  margin: 40px 0 60px; }
 
 footer {
   background: #1E2228; }

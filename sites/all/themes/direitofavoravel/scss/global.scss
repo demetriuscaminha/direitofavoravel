@@ -17,7 +17,41 @@ h2.block-title{
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin: 0 0 40px;
+	margin: 0 0 60px;
+	position: relative;
+	color: $secondary;
+	&:before{
+		background: white;
+		padding: 0 8px;
+		content: "\f209";
+		font-family: "Ionicons";
+		color: $secondary;
+		font-size: 16px;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		text-rendering: auto;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+
+		position: absolute;
+		top: 40px;
+		left: 50%;
+		margin-left: -15px;
+		z-index: 2;
+	}
+	&:after{
+		content: "";
+		width: 160px;
+		height: 2px;
+		position: absolute;
+		left: 50%;
+		margin-left: -80px;
+		top: 47px;
+		background: $secondary;
+	}
 }
 
 .top-site{
@@ -120,9 +154,9 @@ h2.block-title{
 	position: relative;
 	.banner-superbaner{
 		height: 520px;
-		background-size: cover;
 		background-position: center center;
 		color: white;
+		border-bottom: 6px solid $dark-primary;
 		.content-info{
 			margin: 120px 0 0;
 			.text-top{
@@ -151,6 +185,7 @@ h2.block-title{
 		}
 	}
 	.banner-bottom{
+		display: none;
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -175,12 +210,11 @@ h2.block-title{
 
 .css-banner-internas{
 	.banner-internas{
-		height: 250px !important;
 		background-size: cover;
 		background-position: center center;
 		color: white;
 		margin: 0 0 80px;
-		padding: 90px 0;
+		padding: 70px 0;
 		line-height: 1.1;
 		.area{
 			font-size: 24px;
@@ -200,8 +234,10 @@ h2.block-title{
 			h1{
 				text-transform: uppercase;
 				font-weight: bold;
-				font-size: 36px;
+				font-size: 28px;
 				margin: 0;
+				padding: 0 160px;
+				text-shadow: 1px 1px 0px $dark-primary;
 			}
 		}
 	}
@@ -375,7 +411,7 @@ h2.block-title{
 					background: transparent url(../images/play-button.png) center center no-repeat;
 					background-size: cover;
 					right: 20px;
-					bottom: 80px;
+					top: -40px;
 					position: absolute;
 					z-index: 1;
 				}
@@ -436,7 +472,7 @@ h2.block-title{
 				padding: 0 0 0 20px;
 				.title{
 					text-transform: uppercase;
-					font-size: 20px;
+					font-size: 16px;
 					font-weight: bold;
 					color: black;
 					&:hover{
@@ -446,13 +482,13 @@ h2.block-title{
 			}
 			.lawyer, .body{
 				font-family: $font-lora;
-				font-size: 16px;
+				font-size: 14px;
 				font-style: italic;
 				color: black;
 			}
 			.body{
 				color: $text-high;
-				margin: 15px 0 0;
+				margin: 5px 0 0;
 			}
 		}
 	}
@@ -668,10 +704,15 @@ h2.block-title{
 		padding: 0 180px;
 	}
 	.views-field-field-link{
+		margin: 20px 0;
 		a{
+			display: inline-block;
+			padding: 12px 20px;
+			border: 1px solid white;
 			color: white;
 			&:hover{
-				color: $dark-primary;
+				background: white;
+				color: black;
 			}
 		}
 	}
@@ -701,6 +742,14 @@ h2.block-title{
 #block-block-5{
 	background: $bg-light;
 	padding: 80px 0;
+	.video-big-area{
+		padding: 0;
+	}
+	h2.block-title{
+		&:before{
+			background: $bg-light;
+		}
+	}
 }
 
 #block-views-depoimentos-block{
@@ -731,7 +780,37 @@ h2.block-title{
 						left: 50%;
 						margin-left: -25px;
 					}
+					.name{
+						font-weight: normal;
+					}
 				}
+			}
+		}
+	}
+}
+
+.node-type-page{
+	.node{
+		width: 940px;
+		margin: 0 auto;
+	}
+	.sub-title{
+		margin: 0 0 40px;
+		font: bold 16px $font-open;
+	}
+	.field-name-body, .field-name-field-text-headlight{
+		font: normal 14px $font-open;
+		line-height: 26px;
+		margin: 0 0 60px;
+		.mission-values{
+			margin: 40px auto 0;
+			.icon{
+				padding: 0 80px;
+				margin: 0 0 25px;
+			}
+			.title {
+				font: bold 16px $font-open;
+				margin: 15px 0;
 			}
 		}
 	}
@@ -808,6 +887,57 @@ h2.block-title{
 			}
 		}
 	}
+	.css-page-downloads{
+		.views-row{
+			margin: 0 0 10px;
+			.views-field-field-file{
+				a{
+					color: black;
+					font-weight: bold;
+					&:hover{
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.page-exame-oab{
+	.css-downloads-page{
+		.views-field-field-links-fc{
+			margin: 40px 0;
+			.views-label-field-links-fc{
+				color:black;
+				font-size: 18px;
+				border-bottom: 1px solid black;
+				font-weight: bold;
+				padding:0 100px 5px 0;
+				margin: 0 0 15px;
+				display: inline-block;
+			}
+		}
+		.field-content{
+			ul{
+				margin: 0;
+				padding: 0;
+				li{
+					margin: 0 0 10px;
+					padding: 0;
+					list-style: none;
+					.file{
+						a{
+							color: black;
+							&:hover{
+								color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 #block-block-7{
@@ -825,6 +955,10 @@ h2.block-title{
 			font-family: $font-open;
 		}
 	}
+}
+
+.pager-load-more{
+	margin: 40px 0 60px;
 }
 
 footer{

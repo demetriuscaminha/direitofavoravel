@@ -1,5 +1,5 @@
-<?php $image = image_style_url('super_banner', $row->field_field_image[0]['raw']['uri']); ?>
-<div class="banner-superbaner nid-<?php print $row->nid ?>" style="background-position: center;background-image: url(<?php print $image ?>)">
+<?php $image = file_create_url($row->field_field_image[0]['raw']['uri']); ?>
+	<div class="banner-superbaner nid-<?php print $row->nid ?>" style="background-position: center;background-image: url(<?php print $image ?>)">
 	<div class="container">
 		<div class="content-info">
 			<?php if (isset($row->field_field_text_top[0])): ?>

@@ -3,9 +3,7 @@
 
 <div class="youtube-image-thumbnail">
     <?php print drupal_render($image) ?>
-    <div class="youtube-button-play">
-        <i class="far fa-play-circle"></i>
-    </div>
+    
 </div>
 
 <div class="youtube-video hidden">
@@ -13,6 +11,9 @@
 </div>
 
 <div class="caption">
+    <div class="youtube-button-play">
+        <i class="far fa-play-circle"></i>
+    </div>
     <a class="link-content" href="<?php print $link ?>">
         <div class="title"><?php print $row->node_title ?></div>
     </a>
