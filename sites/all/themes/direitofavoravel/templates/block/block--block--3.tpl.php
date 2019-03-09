@@ -7,7 +7,7 @@
   	<?php print render($title_suffix); ?>
 
 	<div class="content"<?php print $content_attributes; ?>>
-		<div class="col-md-3 col-xs-12 left-sidebar">
+		<div class="col-md-3 col-sm-12 left-sidebar">
 			<div class="header">
 				<div class="title">Equipe Confiável</div>
 				<div class="sub-title">Nossos Professores</div>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-9 col-xs-12">
+		<div class="col-md-9 col-sm-12">
 			<?php echo views_embed_view('advogados', 'block'); ?>
 		</div>
 	</div>

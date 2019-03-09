@@ -148,7 +148,7 @@ h2.block-title {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     position: absolute;
-    top: 40px;
+    bottom: -30px;
     left: 50%;
     margin-left: -15px;
     z-index: 2; }
@@ -159,7 +159,7 @@ h2.block-title {
     position: absolute;
     left: 50%;
     margin-left: -80px;
-    top: 47px;
+    bottom: -25px;
     background: #007d9a; }
 
 .top-site {
@@ -175,7 +175,8 @@ h2.block-title {
     align-items: center;
     justify-content: start; }
     .top-site .section-contact .phone {
-      margin: 0 20px 0 0; }
+      margin: 0 20px 0 0;
+      padding: 0; }
       .top-site .section-contact .phone i {
         margin: 0 5px 0 0;
         color: #00B0CC;
@@ -188,20 +189,22 @@ h2.block-title {
   .top-site .mail i {
     color: #00B0CC;
     margin: 0 5px 0 0; }
-  .top-site .section-social .wrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-    .top-site .section-social .wrapper .social {
-      text-align: right;
-      margin: 0 20px 0 0; }
-      .top-site .section-social .wrapper .social div {
-        display: inline-block;
-        margin: 0 10px; }
-        .top-site .section-social .wrapper .social div i {
-          font-size: 18px; }
-    .top-site .section-social .wrapper .contact .btn {
-      width: 145px; }
+  .top-site .section-social {
+    padding: 0; }
+    .top-site .section-social .wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      .top-site .section-social .wrapper .social {
+        text-align: right;
+        margin: 0 20px 0 0; }
+        .top-site .section-social .wrapper .social div {
+          display: inline-block;
+          margin: 0 10px; }
+          .top-site .section-social .wrapper .social div i {
+            font-size: 18px; }
+      .top-site .section-social .wrapper .contact .btn {
+        width: 145px; }
 
 .navbar {
   background: transparent;
@@ -369,9 +372,15 @@ h2.block-title {
     color: #185776;
     margin: 0 5px 0 0; }
 
+.css-cursos-presenciais-lista .field-name-title h2 {
+  margin: 0 0 30px; }
+
+.css-cursos-presenciais-lista .group-left {
+  padding: 0; }
+
 .css-cursos-presenciais-lista .field-name-body {
   font-size: 18px;
-  margin: 60px 0;
+  margin: 0 0 100px;
   line-height: 150%; }
   .css-cursos-presenciais-lista .field-name-body .field-items {
     margin: 0; }
@@ -425,6 +434,59 @@ h2.block-title {
   .css-cursos-presenciais-lista .field-name-field-investment .field-label {
     margin: 0 0 15px;
     font-size: 22px; }
+
+.css-cursos-online-lista h2 {
+  margin: 0 0 30px; }
+  .css-cursos-online-lista h2 a {
+    color: black; }
+
+.css-cursos-online-lista .field-name-body {
+  margin: 40px 0; }
+
+.css-cursos-online-lista .field-name-field-investment {
+  margin: 0 0 60px; }
+
+.ui-accordion {
+  font-family: "OpenSans", sans;
+  margin: 0 0 40px; }
+  .ui-accordion .ui-accordion-header {
+    padding: 15px 20px 20px 30px; }
+    .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+      top: 25px; }
+    .ui-accordion .ui-accordion-header .number {
+      font: bold 28px "RobotoCondensed", sans;
+      color: #00B0CC;
+      position: absolute;
+      top: 15px;
+      right: 10px; }
+    .ui-accordion .ui-accordion-header .duration {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #AEAEAE; }
+    .ui-accordion .ui-accordion-header .title {
+      font: bold 18px "RobotoCondensed", sans;
+      color: #00B0CC;
+      margin: 0 0 5px; }
+    .ui-accordion .ui-accordion-header .facilitator, .ui-accordion .ui-accordion-header .area {
+      font: bold 14px "RobotoCondensed", sans;
+      margin: 0 0 4px; }
+  .ui-accordion .ui-state-default,
+  .ui-accordion .ui-widget-content .ui-state-default,
+  .ui-accordion .ui-widget-header .ui-state-default
+.ui-state-active,
+  .ui-accordion .ui-widget-content .ui-state-active,
+  .ui-accordion .ui-widget-header .ui-state-active {
+    border: 1px solid #dadada;
+    background: #F2F2F2;
+    background-image: none; }
+  .ui-accordion .ui-widget-content {
+    border: 1px solid #dadada;
+    font: normal 14px "OpenSans", sans;
+    line-height: 24px;
+    color: #808080; }
 
 .css-videos-home.css-videos-big .views-field-nothing,
 .css-videos-page.css-videos-big .views-field-nothing {
@@ -716,6 +778,11 @@ h2.block-title {
   #block-block-5 h2.block-title:before {
     background: #F2F2F2; }
 
+#block-block-6 {
+  margin: 0 0 60px; }
+  #block-block-6 .info-content .wrap {
+    margin: 0 0 15px; }
+
 #block-views-depoimentos-block {
   padding: 80px 0; }
   #block-views-depoimentos-block .css-depoimentos .owl-item .item-odd, #block-views-depoimentos-block .css-depoimentos .owl-item .item-even {
@@ -765,6 +832,9 @@ h2.block-title {
       font: bold 16px "OpenSans", sans;
       margin: 15px 0; }
 
+.node-type-page.page-node-48 .field-name-field-text-headlight {
+  display: none; }
+
 .page-node-17 #node-17 {
   margin: 0 0 80px; }
 
@@ -785,6 +855,8 @@ h2.block-title {
 .page-node-17 .field-name-body .social {
   display: flex;
   justify-content: start; }
+  .page-node-17 .field-name-body .social .facebook, .page-node-17 .field-name-body .social .twiiter, .page-node-17 .field-name-body .social .youtube {
+    margin: 0 10px 0 0; }
 
 .page-node-17 .form-actions {
   text-align: right; }
@@ -886,3 +958,49 @@ footer {
     font-size: 13px;
     color: white;
     margin: 15px 0; }
+
+@media screen and (max-width: 768px) {
+  .top-site .section-contact {
+    display: block;
+    text-align: center;
+    height: inherit; }
+    .top-site .section-contact .phone {
+      margin: 5px 0; }
+    .top-site .section-contact .mail {
+      margin: 0 0 15px; }
+  .navbar-toggle {
+    margin: 0;
+    background: #007d9a;
+    border: 0; }
+    .navbar-toggle .icon-bar {
+      background: white !important; }
+  .css-banner-internas .banner-internas .caption h1 {
+    padding: 0 10px; }
+  #block-block-3 .left-sidebar {
+    margin: 0 0 30px; }
+  .css-advogados-home .col-adv {
+    margin: 0 0 30px; }
+  .css-mentoria .views-field-body {
+    padding: 0 10px; }
+  .css-mentoria .views-field-title:before {
+    bottom: -30px;
+    top: inherit; }
+  footer .menu {
+    display: block;
+    text-align: center; }
+  .node-type-page .node {
+    width: inherit; }
+  .page-downloads .css-page-downloads .views-row {
+    margin: 0 0 10px; }
+  .region-sidebar-second .facilitators .facilitator-content {
+    margin: 0 0 30px; }
+  .ui-accordion .ui-accordion-header .title {
+    margin: 0 0 20px; }
+  .ui-accordion .ui-accordion-header .number {
+    top: 65px; }
+  .ui-accordion .ui-accordion-header .duration {
+    top: 75px; }
+  #block-block-6 {
+    margin: 0 0 60px; }
+    #block-block-6 .info-content .wrap {
+      margin: 0 0 15px; } }

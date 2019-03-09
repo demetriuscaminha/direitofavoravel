@@ -35,9 +35,9 @@ h2.block-title{
 		text-rendering: auto;
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
-
+		
 		position: absolute;
-		top: 40px;
+		bottom: -30px;
 		left: 50%;
 		margin-left: -15px;
 		z-index: 2;
@@ -49,7 +49,7 @@ h2.block-title{
 		position: absolute;
 		left: 50%;
 		margin-left: -80px;
-		top: 47px;
+		bottom: -25px;
 		background: $secondary;
 	}
 }
@@ -68,6 +68,7 @@ h2.block-title{
 		justify-content: start;
 		.phone{
 			margin: 0 20px 0 0;
+			padding: 0;
 			i{
 				margin: 0 5px 0 0;
 				color: $primary;
@@ -87,6 +88,7 @@ h2.block-title{
 		}
 	}
 	.section-social{
+		padding: 0;
 		.wrapper{
 			display: flex;
 			justify-content: flex-end;
@@ -318,9 +320,17 @@ h2.block-title{
 }
 
 .css-cursos-presenciais-lista{
+	.field-name-title{
+		h2{
+			margin: 0 0 30px;
+		}
+	}
+	.group-left{
+		padding: 0;
+	}
 	.field-name-body{
 		font-size: 18px;
-		margin: 60px 0;
+		margin: 0 0 100px;
 		line-height: 150%;
 		.field-items{
 			margin: 0;
@@ -386,6 +396,75 @@ h2.block-title{
 			margin: 0 0 15px;
 			font-size: 22px;
 		}
+	}
+}
+
+.css-cursos-online-lista{
+	h2{
+		margin: 0 0 30px;
+		a{
+			color: black;
+		}
+	}
+	.field-name-body{
+		margin: 40px 0;
+	}
+	.field-name-field-investment{
+		margin: 0 0 60px;
+	}
+}
+
+.ui-accordion {
+	font-family: $font-open;
+	margin: 0 0 40px;
+	.ui-accordion-header {
+		padding: 15px 20px 20px 30px;
+		.ui-accordion-header-icon{
+			top: 25px;
+		}
+		.number{
+			font: bold 28px $font-robcond;
+			color: $primary;
+			position: absolute;
+			top: 15px;
+			right: 10px;
+		}
+		.duration{
+			position: absolute;
+			top: 20px;
+			right: 50px;
+			font-size: 12px;
+			font-weight: bold;
+			color: $text-medium;
+		}
+		.title{
+			font: bold 18px $font-robcond;
+			color: $primary;
+			margin: 0 0 5px;
+		}
+		.facilitator, .area{
+			font: bold 14px $font-robcond;
+			margin: 0 0 4px;
+			span{
+				
+			}
+		}
+	}
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active{
+		border: 1px solid #dadada;
+		background: #F2F2F2;
+		background-image: none;
+	}
+	.ui-widget-content{
+		border: 1px solid #dadada;
+		font: normal 14px $font-open;
+		line-height: 24px;
+		color: $text-high;
 	}
 }
 
@@ -752,6 +831,15 @@ h2.block-title{
 	}
 }
 
+#block-block-6{
+	margin: 0 0 60px;
+	.info-content{
+		.wrap{
+			margin: 0 0 15px;
+		}
+	}
+}
+
 #block-views-depoimentos-block{
 	padding: 80px 0;
 	.css-depoimentos{
@@ -814,6 +902,11 @@ h2.block-title{
 			}
 		}
 	}
+	&.page-node-48{
+		.field-name-field-text-headlight{
+			display: none;
+		}
+	}
 }
 
 .page-node-17{
@@ -840,6 +933,9 @@ h2.block-title{
 		.social{
 			display: flex;
 			justify-content: start;
+			.facebook, .twiiter, .youtube{
+				margin: 0 10px 0 0;
+			}
 		}
 	}
 	.form-actions{

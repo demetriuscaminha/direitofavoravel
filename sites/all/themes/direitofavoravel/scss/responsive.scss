@@ -1,0 +1,102 @@
+@media screen and (max-width: 768px) {
+   .top-site {
+      .section-contact{
+         display: block;
+         text-align: center;
+         height: inherit;
+         .phone{
+            margin: 5px 0;
+         }
+         .mail{
+            margin: 0 0 15px;
+         }
+      }
+   }
+   .navbar-toggle{
+      margin: 0;
+      background: $secondary;
+      border: 0;
+      .icon-bar{
+         background: white !important;
+      }
+   }
+   .css-banner-internas {
+      .banner-internas {
+         .caption {
+            h1{
+               padding: 0 10px;
+            }
+         }
+      }
+   }
+   #block-block-3{
+      .left-sidebar{
+         margin: 0 0 30px
+      }
+   }
+   .css-advogados-home{
+      .col-adv{
+         margin: 0 0 30px;
+      }
+   }
+   .css-mentoria {
+      .views-field-body{
+         padding: 0 10px;
+      }
+      
+   }
+   .css-mentoria {
+      .views-field-title{
+         &:before{
+            bottom: -30px;
+            top: inherit;
+         }
+      }
+   }
+   footer {
+      .menu{
+         display: block;
+         text-align: center;
+      }
+   }
+   .node-type-page {
+      .node{
+         width: inherit;
+      }
+   }
+   .page-downloads{
+      .css-page-downloads{
+         .views-row{
+            margin: 0 0 10px;
+         }
+      }
+   }
+	.region-sidebar-second {
+      .facilitators {
+         .facilitator-content{
+            margin: 0 0 30px;
+         }
+      }
+   }
+   .ui-accordion {
+      .ui-accordion-header {
+         .title{
+            margin: 0 0 20px;
+         }
+         .number{
+            top: 65px;
+         }
+         .duration{
+            top: 75px;
+         }
+      }
+   }
+   #block-block-6{
+      margin: 0 0 60px;
+      .info-content{
+         .wrap{
+            margin: 0 0 15px;
+         }
+      }
+   }
+}
