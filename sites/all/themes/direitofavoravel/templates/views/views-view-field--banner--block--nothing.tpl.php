@@ -1,5 +1,18 @@
-<?php $image = file_create_url($row->field_field_image[0]['raw']['uri']); ?>
-	<div class="banner-superbaner nid-<?php print $row->nid ?>" style="background-position: center;background-image: url(<?php print $image ?>)">
+<?php
+require_once 'sites/all/libraries/Mobile_Detect/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$is_mobile = $detect->isMobile();
+
+$image = file_create_url($row->field_field_image[0]['raw']['uri']);
+?>
+<?php if($is_mobile) : $image_mobile = file_create_url($row->field_field_image_mobile[0]['raw']['uri']);?>
+	<div class="banner-superbaner-mobile nid-<?php print $row->nid ?>"">
+		<a class="css-link-conteudo" href="#">
+			<img class="img-responsive" src="<?php print $image_mobile ?>">
+		</a>
+	</div>	
+<?php else : ?>
+<div class="banner-superbaner nid-<?php print $row->nid ?>" style="background-position: center;background-image: url(<?php print $image ?>)">
 	<div class="container">
 		<div class="content-info">
 			<?php if (isset($row->field_field_text_top[0])): ?>
@@ -72,3 +85,4 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>
