@@ -57,7 +57,7 @@ function mmenu_enabled_callback() {
       for (var key in Drupal.mmenu.settings) {
         var mmenu = Drupal.mmenu.settings[key];
         var $mmenu = $('#' + mmenu.name);
-
+        mmenu.options.header.content = "<img src='"+settings.basePath+"sites/default/files/df-logo.png' alt='Início' class='img-responsive'>";
         // Initializes single mmenu.
         $mmenu.mmenu(
           mmenu.options,
