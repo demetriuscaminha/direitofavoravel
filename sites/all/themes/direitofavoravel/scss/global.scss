@@ -1011,6 +1011,12 @@ label.error{
 		}
 	}
 	.css-page-downloads{
+		.view-empty{
+			color: $accent;
+			font-size: 28px;
+			text-align: center;
+			margin: 0 0 200px;
+		}
 		.views-row{
 			margin: 0 0 10px;
 			.views-field-field-file{

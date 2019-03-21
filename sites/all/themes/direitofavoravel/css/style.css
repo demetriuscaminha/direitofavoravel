@@ -918,6 +918,12 @@ label.error {
       .page-downloads .css-downloads-page .field-content ul li .file a:hover {
         color: #00B0CC; }
 
+.page-downloads .css-page-downloads .view-empty {
+  color: #F44336;
+  font-size: 28px;
+  text-align: center;
+  margin: 0 0 200px; }
+
 .page-downloads .css-page-downloads .views-row {
   margin: 0 0 10px; }
   .page-downloads .css-page-downloads .views-row .views-field-field-file a {
