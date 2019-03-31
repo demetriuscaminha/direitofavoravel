@@ -659,8 +659,10 @@ h2.block-title {
   margin: 40px 0; }
 
 #block-block-3 {
-  margin: 80px 0;
-  display: inline-block; }
+  margin: 80px 0 50px;
+  display: block !important;
+  overflow: hidden;
+  padding: 0 0 70px; }
   #block-block-3 .left-sidebar .header {
     border-left: 6px solid #00B0CC;
     padding: 0 0 0 15px;
@@ -678,55 +680,78 @@ h2.block-title {
     #block-block-3 .left-sidebar .link .link-lawyer {
       text-transform: uppercase;
       font-weight: bold; }
-  #block-block-3 .css-advogados-home .col-md-4 {
+  #block-block-3 .css-advogados-home {
     position: relative; }
-    #block-block-3 .css-advogados-home .col-md-4 .hover {
-      color: white;
-      position: absolute;
-      opacity: 0;
-      top: 50px;
-      left: 0;
-      margin: 0 15px;
-      background: rgba(0, 176, 204, 0.6);
-      padding: 20px;
-      height: 312px;
-      transition: 0.3s; }
-      #block-block-3 .css-advogados-home .col-md-4 .hover .email {
-        margin: 0 0 10px; }
-        #block-block-3 .css-advogados-home .col-md-4 .hover .email a {
-          color: white;
-          font-weight: bold; }
-      #block-block-3 .css-advogados-home .col-md-4 .hover .social {
-        display: flex;
-        justify-content: space-between; }
-        #block-block-3 .css-advogados-home .col-md-4 .hover .social a {
-          color: white; }
-          #block-block-3 .css-advogados-home .col-md-4 .hover .social a:hover i {
-            background: white;
-            color: #00B0CC; }
-          #block-block-3 .css-advogados-home .col-md-4 .hover .social a i {
+    #block-block-3 .css-advogados-home .col-md-4 {
+      position: relative; }
+      #block-block-3 .css-advogados-home .col-md-4 .hover {
+        color: white;
+        position: absolute;
+        opacity: 0;
+        top: 50px;
+        left: 0;
+        margin: 0 15px;
+        background: rgba(0, 176, 204, 0.6);
+        padding: 20px;
+        height: 312px;
+        transition: 0.3s; }
+        #block-block-3 .css-advogados-home .col-md-4 .hover .email {
+          margin: 0 0 10px; }
+          #block-block-3 .css-advogados-home .col-md-4 .hover .email a {
             color: white;
-            border: 1px solid white;
-            border-radius: 100%;
-            padding: 10px;
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            text-align: center; }
-    #block-block-3 .css-advogados-home .col-md-4:hover .hover {
-      opacity: 1;
-      top: 0; }
-    #block-block-3 .css-advogados-home .col-md-4 .views-field-title {
-      padding: 20px;
-      background: #F2F2F2; }
-      #block-block-3 .css-advogados-home .col-md-4 .views-field-title .name {
-        font-size: 18px;
-        font-weight: bold; }
-      #block-block-3 .css-advogados-home .col-md-4 .views-field-title .specialty {
-        font-family: "Lora", sans;
-        font-size: 14px;
-        font-style: italic;
-        color: #AEAEAE; }
+            font-weight: bold; }
+        #block-block-3 .css-advogados-home .col-md-4 .hover .social {
+          display: flex;
+          justify-content: space-between; }
+          #block-block-3 .css-advogados-home .col-md-4 .hover .social a {
+            color: white; }
+            #block-block-3 .css-advogados-home .col-md-4 .hover .social a:hover i {
+              background: white;
+              color: #00B0CC; }
+            #block-block-3 .css-advogados-home .col-md-4 .hover .social a i {
+              color: white;
+              border: 1px solid white;
+              border-radius: 100%;
+              padding: 10px;
+              display: inline-block;
+              width: 36px;
+              height: 36px;
+              text-align: center; }
+      #block-block-3 .css-advogados-home .col-md-4:hover .hover {
+        opacity: 1;
+        top: 0; }
+      #block-block-3 .css-advogados-home .col-md-4 .views-field-title {
+        padding: 20px;
+        background: #F2F2F2; }
+        #block-block-3 .css-advogados-home .col-md-4 .views-field-title .name {
+          font-size: 18px;
+          font-weight: bold; }
+        #block-block-3 .css-advogados-home .col-md-4 .views-field-title .specialty {
+          font-family: "Lora", sans;
+          font-size: 14px;
+          font-style: italic;
+          color: #AEAEAE;
+          min-height: 40px; }
+    #block-block-3 .css-advogados-home .slick__arrow {
+      position: absolute;
+      bottom: -30px;
+      top: inherit; }
+      #block-block-3 .css-advogados-home .slick__arrow .slick-arrow::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f054";
+        color: #007d9a; }
+      #block-block-3 .css-advogados-home .slick__arrow .slick-prev {
+        left: 715px;
+        transform: rotate(180deg);
+        background: rgba(190, 190, 190, 0.2);
+        border-radius: 0 !important;
+        bottom: -20px !important;
+        top: inherit; }
+      #block-block-3 .css-advogados-home .slick__arrow .slick-next {
+        right: 16px;
+        background: rgba(190, 190, 190, 0.2);
+        border-radius: 0 !important; }
 
 .css-mentoria {
   padding: 50px 0;
@@ -815,6 +840,14 @@ h2.block-title {
         margin-left: -25px; }
       #block-views-depoimentos-block .css-depoimentos .owl-item .item-odd .views-field-nothing .name, #block-views-depoimentos-block .css-depoimentos .owl-item .item-even .views-field-nothing .name {
         font-weight: normal; }
+      #block-views-depoimentos-block .css-depoimentos .owl-item .item-odd .views-field-nothing .photo, #block-views-depoimentos-block .css-depoimentos .owl-item .item-even .views-field-nothing .photo {
+        margin: 15px 0; }
+        #block-views-depoimentos-block .css-depoimentos .owl-item .item-odd .views-field-nothing .photo img, #block-views-depoimentos-block .css-depoimentos .owl-item .item-even .views-field-nothing .photo img {
+          display: inline-block;
+          border-radius: 100%;
+          height: 100px;
+          width: 100px;
+          border: 2px solid #BEBEBE; }
 
 .node-type-page .node {
   width: 940px;
@@ -1009,6 +1042,29 @@ footer {
     margin: 0 0 60px; }
     #block-block-6 .info-content .wrap {
       margin: 0 0 15px; }
+  .css-advogados-home .slick__arrow {
+    display: none; }
+  .css-videos-home.css-videos-big {
+    margin: 0 0 30px; }
+    .css-videos-home.css-videos-big .views-field-nothing .caption {
+      position: relative;
+      background: #1E2228; }
+      .css-videos-home.css-videos-big .views-field-nothing .caption a.link-content .title {
+        font-size: 17px;
+        padding: 0;
+        margin: 0 0 15px; }
+    .css-videos-home.css-videos-big .views-field-nothing .lawyer, .css-videos-home.css-videos-big .views-field-nothing .body {
+      font-size: 14px; }
+    .css-videos-home.css-videos-big .views-field-nothing .youtube-button-play i {
+      display: none; }
+  .css-videos-home.css-videos-small a.link-content {
+    display: block; }
+    .css-videos-home.css-videos-small a.link-content .caption {
+      padding: 15px; }
+  .css-videos-home.css-videos-small .youtube-image-thumbnail {
+    text-align: center; }
+    .css-videos-home.css-videos-small .youtube-image-thumbnail img {
+      display: inline-block; }
   .css-videos-page.css-videos-big .views-field-nothing {
     margin: 0 0 40px;
     position: relative; }

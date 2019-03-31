@@ -99,6 +99,49 @@
          }
       }
    }
+   .css-advogados-home{
+      .slick__arrow{
+         display: none;
+      }
+   }
+   .css-videos-home.css-videos-big {
+      margin: 0 0 30px;
+      .views-field-nothing {
+         .caption {
+            position: relative;
+            background: $bg-footer;
+            a.link-content {
+               .title{
+                  font-size: 17px;
+                  padding: 0;
+                  margin: 0 0 15px;
+               }
+            }
+         }
+         .lawyer, .body{
+            font-size: 14px;
+         }
+         .youtube-button-play {
+            i{
+               display: none;
+            }
+         }
+      }
+   }
+   .css-videos-home.css-videos-small {
+      a.link-content{
+         display: block;
+         .caption{
+            padding: 15px;
+         }
+      }
+      .youtube-image-thumbnail{
+         text-align: center;
+         img{
+            display: inline-block;
+         }
+      }
+   }
    .css-videos-page.css-videos-big {
       .views-field-nothing{
          margin: 0 0 40px;

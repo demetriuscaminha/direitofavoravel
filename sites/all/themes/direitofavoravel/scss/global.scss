@@ -661,8 +661,10 @@ h2.block-title{
 }
 
 #block-block-3{
-	margin: 80px 0;
-	display: inline-block;
+	margin: 80px 0 50px;
+	display: block !important;
+	overflow: hidden;
+	padding: 0 0 70px;
 	.left-sidebar{
 		.header{
 			border-left: 6px solid $primary;
@@ -688,6 +690,7 @@ h2.block-title{
 		}
 	}
 	.css-advogados-home{
+		position: relative;
 		.col-md-4 {
 			position: relative;
 			.hover{
@@ -750,7 +753,31 @@ h2.block-title{
 					font-size: 14px;
 					font-style: italic;
 					color: $text-medium;
+					min-height: 40px;
 				}
+			}
+		}
+		.slick__arrow{
+			position: absolute;
+			bottom: -30px;
+			top: inherit;
+			.slick-arrow::before{
+				font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f054";
+				color: $secondary;
+				
+			}
+			.slick-prev{
+				left: 715px;
+				transform: rotate(180deg);
+				background: rgba(190, 190, 190, .2);
+				border-radius: 0 !important;
+				bottom: -20px !important;
+				top: inherit;
+			}
+			.slick-next{
+				right: 16px;
+				background: rgba(190,190,190,.2);
+				border-radius: 0 !important;
 			}
 		}
 	}
@@ -871,6 +898,16 @@ h2.block-title{
 					}
 					.name{
 						font-weight: normal;
+					}
+					.photo{
+						margin: 15px 0;
+						img{
+							display: inline-block;
+							border-radius: 100%;
+							height: 100px;
+							width: 100px;
+							border: 2px solid $text-light;
+						}
 					}
 				}
 			}
