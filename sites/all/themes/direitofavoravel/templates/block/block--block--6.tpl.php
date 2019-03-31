@@ -15,7 +15,10 @@
             <?php 
                 switch ($node->field_registration['und'][0]['value']) {
                     case 0:
-                        print '<a href="#" class="btn btn-danger">INSCREVA-SE</a>';            
+                        if ($node->field_link_pagseguro['und'][0]) {
+                            print "<a href=" . $node->field_link_pagseguro['und'][0]['url'] . " class='btn btn-danger' target='_blank' title='INSCREVA-SE'>INSCREVA-SE</a>";
+                        }
+
                         break;
                     
                     case 1:

@@ -5,6 +5,9 @@ body{
 	font-size: 14px;
 	a{
 		color: $primary;
+		transition: all 0.2s;
+		-webkit-transition-delay: 0.2s;
+		transition-delay: 0.2s;
 		&:hover{
 			text-decoration: none;
 			color: $dark-primary;
@@ -53,6 +56,11 @@ h2.block-title{
 	}
 }
 
+label.error{
+	font-size: 12px;
+	font-weight: normal;
+	color: $accent;
+}
 .top-site{
 	background: black;
 	color: white;
@@ -158,6 +166,12 @@ h2.block-title{
 		background-position: center center;
 		color: white;
 		border-bottom: 6px solid $dark-primary;
+		background-repeat: no-repeat;
+		background-size: cover;
+		.container{
+			position: relative;
+			height: 520px;
+		}
 		.content-info{
 			margin: 120px 0 0;
 			.text-top{
@@ -178,6 +192,15 @@ h2.block-title{
 			.buttons{
 				.btn{
 					width: 200px;
+					position: absolute;
+					bottom: 130px;
+					left: 47px;
+					background: $accent;
+					border: 1px solid $accent;
+					&:hover{
+						color: $accent !important;
+						background: white;
+					}
 				}
 				.btn-outline{
 					margin: 0 20px 0 0;
@@ -949,7 +972,7 @@ h2.block-title{
 
 .page-node-17{
 	#node-17{
-		margin: 0 0 80px;
+		margin: 0 auto 80px;
 	}
 	.field-name-body{
 		.title{
@@ -957,6 +980,7 @@ h2.block-title{
 				margin: 0 0 15px;
 				font-size: 20px;
 				font-weight: bold;
+				color: $dark-primary;
 			}
 		}
 		.info, .address{
@@ -978,6 +1002,8 @@ h2.block-title{
 	}
 	.form-actions{
 		text-align: right;
+		display: block;
+		clear: both;
 		.webform-submit{
 			width: 200px;
 		}
@@ -1022,6 +1048,12 @@ h2.block-title{
 		}
 	}
 	.css-page-downloads{
+		.view-empty{
+			color: $accent;
+			font-size: 28px;
+			text-align: center;
+			margin: 0 0 200px;
+		}
 		.views-row{
 			margin: 0 0 10px;
 			.views-field-field-file{

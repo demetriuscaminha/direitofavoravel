@@ -65,7 +65,7 @@
 
     Drupal.behaviors.geralConf = {
         attach: function () {
- 
+            $('.css-advogados-home .slick-slide .slick__slide').addClass('col-adv col-xs-12 col-sm-12 col-md-4 col-lg-4');
         }
     };    
 })(jQuery);
