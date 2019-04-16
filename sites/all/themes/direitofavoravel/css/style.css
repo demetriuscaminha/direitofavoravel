@@ -1027,6 +1027,23 @@ footer {
     color: white;
     margin: 15px 0; }
 
+.page-node-132 .region-content {
+  width: 960px;
+  margin: 0 auto; }
+
+.page-node-132 h1.page-header {
+  display: none; }
+
+.page-node-132 .wrapper-mat {
+  overflow: hidden;
+  margin: 0 0 40px; }
+
+.page-node-132 .info-text {
+  font-size: 18px; }
+
+.page-node-132 .webform-client-form {
+  margin: 0 0 100px; }
+
 @media screen and (max-width: 768px) {
   .top-site .section-contact {
     display: block;
