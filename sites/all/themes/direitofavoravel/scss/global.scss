@@ -1176,3 +1176,44 @@ footer{
 		margin: 0 0 100px;
 	}
 }
+
+.node-type-presential-courses{
+	h1.page-header{
+		display: none;
+	}
+	.node-presential-courses{
+		margin: 0 0 100px;
+	}
+	.group-left{
+		padding: 0;
+	}
+	.field-name-title{
+		h2{
+			margin: 0 0 30px;
+		}
+	}
+	.field-name-field-link{
+		a{
+			background: $accent;
+			border: 1px solid $accent;
+			border-radius: 0;
+			padding: 14px 12px;
+			line-height: 1;
+			text-transform: uppercase;
+			font-family: "RobotoCondensed", sans;
+			font-weight: bold;
+			height: 45px;
+			display: inline-block;
+			margin: 0 0 20px;
+			float: right;
+			color: white;
+			width: 245px;
+			text-align: center;
+			&:hover{
+				background: white;
+				border: 1px solid $accent;
+				color: $accent;
+			}
+		}
+	}
+}
