@@ -1077,6 +1077,19 @@ footer {
     border: 1px solid #F44336;
     color: #F44336; }
 
+.node-type-eventos h1.page-header {
+  margin: 0 0 40px;
+  border: 0;
+  padding: 0; }
+
+.node-type-eventos .view-mode-full {
+  margin: 0 auto 100px; }
+  .node-type-eventos .view-mode-full .group-left {
+    width: 30% !important;
+    margin: 0 5% 0 0; }
+  .node-type-eventos .view-mode-full .group-right {
+    width: 65% !important; }
+
 @media screen and (max-width: 768px) {
   .top-site .section-contact {
     display: block;
