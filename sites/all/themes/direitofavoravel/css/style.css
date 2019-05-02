@@ -1188,4 +1188,19 @@ footer {
       text-align: center; }
   .page-node-132 .region-content {
     width: inherit;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .node-type-eventos h1.page-header {
+    margin: 0 0 40px;
+    border: 0;
+    padding: 0; }
+  .node-type-eventos .view-mode-full {
+    margin: 0 auto 100px; }
+    .node-type-eventos .view-mode-full .group-left {
+      width: 100% !important;
+      margin: 0 0 40px 0; }
+    .node-type-eventos .view-mode-full .group-right {
+      width: 100% !important; }
+    .node-type-eventos .view-mode-full .field-name-field-imagem {
+      text-align: center; }
+      .node-type-eventos .view-mode-full .field-name-field-imagem img {
+        display: inline-block; } }
