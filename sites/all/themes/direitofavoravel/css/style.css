@@ -1027,69 +1027,6 @@ footer {
     color: white;
     margin: 15px 0; }
 
-.page-node-132 .region-content {
-  width: 960px;
-  margin: 0 auto; }
-
-.page-node-132 h1.page-header {
-  display: none; }
-
-.page-node-132 .wrapper-mat {
-  overflow: hidden;
-  margin: 0 0 40px; }
-
-.page-node-132 .info-text {
-  font-size: 18px; }
-
-.page-node-132 .webform-client-form {
-  margin: 0 0 100px; }
-
-.node-type-presential-courses h1.page-header {
-  display: none; }
-
-.node-type-presential-courses .node-presential-courses {
-  margin: 0 0 100px; }
-
-.node-type-presential-courses .group-left {
-  padding: 0; }
-
-.node-type-presential-courses .field-name-title h2 {
-  margin: 0 0 30px; }
-
-.node-type-presential-courses .field-name-field-link a {
-  background: #F44336;
-  border: 1px solid #F44336;
-  border-radius: 0;
-  padding: 14px 12px;
-  line-height: 1;
-  text-transform: uppercase;
-  font-family: "RobotoCondensed", sans;
-  font-weight: bold;
-  height: 45px;
-  display: inline-block;
-  margin: 0 0 20px;
-  float: right;
-  color: white;
-  width: 245px;
-  text-align: center; }
-  .node-type-presential-courses .field-name-field-link a:hover {
-    background: white;
-    border: 1px solid #F44336;
-    color: #F44336; }
-
-.node-type-eventos h1.page-header {
-  margin: 0 0 40px;
-  border: 0;
-  padding: 0; }
-
-.node-type-eventos .view-mode-full {
-  margin: 0 auto 100px; }
-  .node-type-eventos .view-mode-full .group-left {
-    width: 30% !important;
-    margin: 0 5% 0 0; }
-  .node-type-eventos .view-mode-full .group-right {
-    width: 65% !important; }
-
 @media screen and (max-width: 768px) {
   .top-site .section-contact {
     display: block;
@@ -1185,22 +1122,4 @@ footer {
     .css-videos-page.css-videos-small a.link-content .caption {
       margin: 15px 0 0;
       padding: 0;
-      text-align: center; }
-  .page-node-132 .region-content {
-    width: inherit;
-    margin: 0 auto; }
-  .node-type-eventos h1.page-header {
-    margin: 0 0 40px;
-    border: 0;
-    padding: 0; }
-  .node-type-eventos .view-mode-full {
-    margin: 0 auto 100px; }
-    .node-type-eventos .view-mode-full .group-left {
-      width: 100% !important;
-      margin: 0 0 40px 0; }
-    .node-type-eventos .view-mode-full .group-right {
-      width: 100% !important; }
-    .node-type-eventos .view-mode-full .field-name-field-imagem {
-      text-align: center; }
-      .node-type-eventos .view-mode-full .field-name-field-imagem img {
-        display: inline-block; } }
+      text-align: center; } }

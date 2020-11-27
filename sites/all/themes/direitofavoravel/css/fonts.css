@@ -1,0 +1,58 @@
+/***** FONTFACE ******/
+
+/* DIN LIGHT */
+@font-face {
+  font-family: 'DINlight';
+  src: 
+  	url('../fonts/DINlight/DINPro-Light.eot?#iefix') format('embedded-opentype'),  
+  	url('../fonts/DINlight/DINPro-Light.otf')  format('opentype'),
+	url('../fonts/DINlight/DINPro-Light.woff') format('woff'), 
+	url('../fonts/DINlight/DINPro-Light.ttf')  format('truetype'), 
+	url('../fonts/DINlight/DINPro-Light.svg#DINPro-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* DIN LIGHT */
+
+/* DIN MEDIUM */
+@font-face {
+  font-family: 'DINmedium';
+  	src: 
+  	url('../fonts/DINmedium/DINPro-Medium.eot?#iefix') format('embedded-opentype'),  
+  	url('../fonts/DINmedium/DINPro-Medium.otf')  format('opentype'),
+	url('../fonts/DINmedium/DINPro-Medium.woff') format('woff'), 
+	url('../fonts/DINmedium/DINPro-Medium.ttf')  format('truetype'), 
+	url('../fonts/DINmedium/DINPro-Medium.svg#DINPro-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* DIN MEDIUM */
+
+/* DIN BOLD */
+@font-face {
+font-family: 'DINbold';
+	src: 
+	url('../fonts/DINbold/DINPro-Bold.eot?#iefix') format('embedded-opentype'),  
+	url('../fonts/DINbold/DINPro-Bold.otf')  format('opentype'),
+ 	url('../fonts/DINbold/DINPro-Bold.woff') format('woff'), 
+ 	url('../fonts/DINbold/DINPro-Bold.ttf')  format('truetype'), 
+ 	url('../fonts/DINbold/DINPro-Bold.svg#DINPro-Bold') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+/* DIN BOLD */
+
+/* CRONOS */
+@font-face {
+font-family: 'Cronos';
+src: url('../fonts/cronos/cronosproboldcaptionitalic.eot');
+src: url('../fonts/cronos/cronosproboldcaptionitalic.eot') format('embedded-opentype'),
+		 url('../fonts/cronos/cronosproboldcaptionitalic.woff2') format('woff2'),
+		 url('../fonts/cronos/cronosproboldcaptionitalic.woff') format('woff'),
+		 url('../fonts/cronos/cronosproboldcaptionitalic.ttf') format('truetype'),
+		 url('../fonts/cronos/cronosproboldcaptionitalic.svg#cronosproboldcaptionitalic') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+/* CRONOS */
+/***** FONTFACE ******/
